@@ -54,7 +54,7 @@ export function FeaturedProjects() {
 
                   {/* Key Metric Badge */}
                   <div className="mb-4">
-                    <Badge variant="accent" className="text-sm font-bold px-4 py-1.5">
+                    <Badge variant="money" className="text-sm font-bold px-4 py-1.5">
                       {project.keyMetric.value} {project.keyMetric.label}
                     </Badge>
                   </div>

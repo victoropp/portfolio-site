@@ -17,6 +17,7 @@ const badgeVariants = cva(
         tech: "bg-secondary/20 text-secondary border border-secondary/30 hover:bg-secondary/30 hover:border-secondary/50 hover:scale-105",
         metric: "bg-primary/20 text-primary border border-primary/30 font-bold",
         money: "bg-accent/20 text-accent border border-accent/30 font-bold",
+        accent: "bg-accent/20 text-accent border border-accent/30 font-bold hover:bg-accent/30",
       },
     },
     defaultVariants: {

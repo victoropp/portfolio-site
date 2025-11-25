@@ -4,6 +4,7 @@
 
 export type {
   Project,
+  BusinessImpact,
   FilterState,
   SortOption,
 } from './project';

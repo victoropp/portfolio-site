@@ -1,5 +1,12 @@
 // lib/types/project.ts
 
+export interface BusinessImpact {
+  roi: string;
+  savings?: string;
+  accuracy?: string;
+  other?: { label: string; value: string }[];
+}
+
 export interface Project {
   // Identifiers
   id: string;
