@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
 import { projects } from "@/lib/data/projects";
@@ -128,13 +129,17 @@ export function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Button size="lg" className="group">
-            View Projects
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          <Button asChild size="lg" className="group">
+            <Link href="/projects">
+              View Projects
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
-          <Button variant="outline" size="lg">
-            <Download className="mr-2 h-5 w-5" />
-            Download Resume
+          <Button asChild variant="outline" size="lg">
+            <a href="/resume.pdf" download target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2 h-5 w-5" />
+              Download Resume
+            </a>
           </Button>
         </motion.div>
 
