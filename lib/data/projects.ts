@@ -694,7 +694,7 @@ export const projects: Project[] = [
       '/projects/twitter-sentiment/wordclouds.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/twitter-sentiment-analysis',
+    githubUrl: 'https://github.com/victoropp/twitter-sentiment-analysis',
 
     seo: {
       metaTitle: 'Twitter Sentiment Analysis - 88% ROC-AUC, Brand Monitoring | Victor Oppon',
