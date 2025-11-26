@@ -104,43 +104,55 @@ const ProjectsPage = () => {
     return result;
   }, [filters]);
 
+  const heroContent = (
+    <>
+      <h1 className="mb-4 text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
+        Data Science{' '}
+        <span className="text-gradient">
+          Portfolio
+        </span>
+      </h1>
+      <p className="mx-auto max-w-3xl text-lg text-muted-foreground md:text-xl">
+        Explore production-grade machine learning projects with proven business
+        impact. From fraud detection to medical imaging, each project demonstrates
+        real-world value.
+      </p>
+      <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+        <div className="rounded-lg bg-card/50 px-4 py-2">
+          <span className="text-primary font-semibold">{projects.length}</span>{' '}
+          <span className="text-muted-foreground">Production Projects</span>
+        </div>
+        <div className="rounded-lg bg-card/50 px-4 py-2">
+          <span className="text-accent font-semibold">{uniqueDomains}+</span>{' '}
+          <span className="text-muted-foreground">Industry Domains</span>
+        </div>
+        <div className="rounded-lg bg-card/50 px-4 py-2">
+          <span className="text-secondary font-semibold">End-to-End</span>{' '}
+          <span className="text-muted-foreground">ML Pipelines</span>
+        </div>
+      </div>
+    </>
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-card/30 to-background">
       {/* Hero Section */}
       <section className="border-b border-border bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 py-16">
         <div className="container-custom">
-          <motion.div
-            initial={hydrated ? { opacity: 0, y: -20 } : false}
-            animate={hydrated ? { opacity: 1, y: 0 } : false}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="mb-4 text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
-              Data Science{' '}
-              <span className="text-gradient">
-                Portfolio
-              </span>
-            </h1>
-            <p className="mx-auto max-w-3xl text-lg text-muted-foreground md:text-xl">
-              Explore production-grade machine learning projects with proven business
-              impact. From fraud detection to medical imaging, each project demonstrates
-              real-world value.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-              <div className="rounded-lg bg-card/50 px-4 py-2">
-                <span className="text-primary font-semibold">{projects.length}</span>{' '}
-                <span className="text-muted-foreground">Production Projects</span>
-              </div>
-              <div className="rounded-lg bg-card/50 px-4 py-2">
-                <span className="text-accent font-semibold">{uniqueDomains}+</span>{' '}
-                <span className="text-muted-foreground">Industry Domains</span>
-              </div>
-              <div className="rounded-lg bg-card/50 px-4 py-2">
-                <span className="text-secondary font-semibold">End-to-End</span>{' '}
-                <span className="text-muted-foreground">ML Pipelines</span>
-              </div>
+          {!hydrated ? (
+            <div className="text-center">
+              {heroContent}
             </div>
-          </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              {heroContent}
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -158,10 +170,7 @@ const ProjectsPage = () => {
           {/* Projects Grid */}
           <div className="mt-8">
             {filteredProjects.length > 0 ? (
-              <motion.div
-                layout={hydrated}
-                className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-              >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {filteredProjects.map((project, index) => (
                   <ProjectCard
                     key={project.id}
@@ -169,13 +178,9 @@ const ProjectsPage = () => {
                     index={index}
                   />
                 ))}
-              </motion.div>
+              </div>
             ) : (
-              <motion.div
-                initial={hydrated ? { opacity: 0 } : false}
-                animate={hydrated ? { opacity: 1 } : false}
-                className="flex flex-col items-center justify-center py-20"
-              >
+              <div className="flex flex-col items-center justify-center py-20">
                 <div className="text-6xl mb-4">🔍</div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">
                   No projects found
@@ -197,7 +202,7 @@ const ProjectsPage = () => {
                 >
                   Clear All Filters
                 </button>
-              </motion.div>
+              </div>
             )}
           </div>
         </div>

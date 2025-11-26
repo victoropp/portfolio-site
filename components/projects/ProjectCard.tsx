@@ -17,24 +17,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
   const remainingCount = project.techStack.length - 4;
   const hydrated = useHydrated();
 
-  // Before hydration: render without animation to ensure visibility
-  const motionProps = hydrated
-    ? {
-        initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.5, delay: index * 0.1 },
-        whileHover: { scale: 1.02, y: -8 },
-      }
-    : {
-        initial: false,
-        animate: false,
-      };
-
-  return (
-    <motion.div
-      {...motionProps}
-      className="group relative h-full"
-    >
+  const cardContent = (
+    <>
       {/* Card container with glassmorphism */}
       <div className="relative h-full rounded-2xl border border-border bg-gradient-to-br from-card/90 to-card/80 backdrop-blur-lg overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,217,255,0.3)]">
 
@@ -123,6 +107,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 blur-xl"></div>
         </div>
       </div>
+    </>
+  );
+
+  // Before hydration: render plain div to ensure visibility
+  if (!hydrated) {
+    return (
+      <div className="group relative h-full">
+        {cardContent}
+      </div>
+    );
+  }
+
+  // After hydration: use motion for animations
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ scale: 1.02, y: -8 }}
+      className="group relative h-full"
+    >
+      {cardContent}
     </motion.div>
   );
 };

@@ -1,8 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { motion, useInView, Variants } from "framer-motion"
-import { useHydrated } from "@/lib/hooks/useHydrated"
+import { motion, Variants } from "framer-motion"
 
 interface ScrollRevealProps {
   children: React.ReactNode
@@ -21,9 +20,56 @@ export function ScrollReveal({
   direction = "up",
   once = true,
 }: ScrollRevealProps) {
-  const ref = React.useRef(null)
-  const isInView = useInView(ref, { once, margin: "-100px" })
-  const hydrated = useHydrated()
+  const ref = React.useRef<HTMLDivElement>(null)
+
+  // Track mount and visibility states
+  const [mounted, setMounted] = React.useState(false)
+  const [wasInitiallyInView, setWasInitiallyInView] = React.useState(true) // Default to true for SSR
+  const [hasAnimated, setHasAnimated] = React.useState(false)
+  const [isCurrentlyInView, setIsCurrentlyInView] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+
+    // Check if element is in view at mount time
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect()
+      const inViewAtMount = rect.top < window.innerHeight && rect.bottom > 0
+      setWasInitiallyInView(inViewAtMount)
+
+      // If initially in view, mark as already animated (no animation needed)
+      if (inViewAtMount) {
+        setHasAnimated(true)
+        setIsCurrentlyInView(true)
+      }
+    }
+  }, [])
+
+  // Set up intersection observer for elements not initially in view
+  React.useEffect(() => {
+    if (!mounted || wasInitiallyInView || hasAnimated) return
+    if (!ref.current) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsCurrentlyInView(true)
+            if (once) {
+              setHasAnimated(true)
+              observer.disconnect()
+            }
+          } else if (!once) {
+            setIsCurrentlyInView(false)
+          }
+        })
+      },
+      { rootMargin: "-100px" }
+    )
+
+    observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [mounted, wasInitiallyInView, hasAnimated, once])
 
   const directionOffset = {
     up: { y: 40, x: 0 },
@@ -49,9 +95,8 @@ export function ScrollReveal({
     },
   }
 
-  // Before hydration: render content visible (no animation)
-  // After hydration: use scroll-triggered animation
-  if (!hydrated) {
+  // Before mount: render content visible (no animation wrapper) for SSR/static export
+  if (!mounted) {
     return (
       <div ref={ref} className={className}>
         {children}
@@ -59,11 +104,22 @@ export function ScrollReveal({
     )
   }
 
+  // If element was in view at mount time, render without motion wrapper (stays visible, no animation)
+  if (wasInitiallyInView) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    )
+  }
+
+  // Element was NOT in view at mount - use scroll-triggered animation
+  // Start visible (not hidden) to prevent flash, animate when scrolled into view
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      initial={{ opacity: 0, ...directionOffset[direction] }}
+      animate={isCurrentlyInView ? "visible" : { opacity: 0, ...directionOffset[direction] }}
       variants={variants}
       className={className}
     >

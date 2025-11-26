@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence, type Variants } from "framer-motion"
 import { usePathname } from "next/navigation"
-import { useHydrated } from "@/lib/hooks/useHydrated"
+import { useEffect, useRef, useState } from "react"
 
 interface PageTransitionProps {
   children: React.ReactNode
@@ -31,17 +31,25 @@ const variants: Variants = {
 
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname()
-  const hydrated = useHydrated()
+  const [hasNavigated, setHasNavigated] = useState(false)
+  const initialPathRef = useRef(pathname)
 
-  // Before hydration: render content directly without animation wrapper
-  // This ensures content is always visible on static export
-  if (!hydrated) {
+  // Only enable animations after the FIRST navigation (not on initial load)
+  useEffect(() => {
+    if (pathname !== initialPathRef.current) {
+      setHasNavigated(true)
+    }
+  }, [pathname])
+
+  // No animation wrapper at all until user has navigated
+  // This prevents the flash/invisible content issue
+  if (!hasNavigated) {
     return <>{children}</>
   }
 
-  // After hydration: enable page transitions for client-side navigation
+  // After first navigation: enable page transitions
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
         initial="hidden"
