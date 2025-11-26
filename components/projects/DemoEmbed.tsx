@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Play, Maximize2 } from 'lucide-react';
+import { useHydrated } from '@/lib/hooks/useHydrated';
 
 interface DemoEmbedProps {
   demoUrl?: string;
@@ -12,6 +13,7 @@ interface DemoEmbedProps {
 const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showDemo, setShowDemo] = useState(false);
+  const hydrated = useHydrated();
 
   if (!demoUrl) {
     return (
@@ -60,8 +62,8 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
       {/* Demo Embed */}
       {!showDemo ? (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={hydrated ? { opacity: 0 } : false}
+          animate={hydrated ? { opacity: 1 } : false}
           className="relative aspect-video overflow-hidden rounded-xl border border-border bg-gradient-to-br from-background to-card"
         >
           {/* Preview/Placeholder */}
@@ -89,8 +91,8 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
         </motion.div>
       ) : (
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={hydrated ? { opacity: 0, scale: 0.95 } : false}
+          animate={hydrated ? { opacity: 1, scale: 1 } : false}
           transition={{ duration: 0.3 }}
           className="relative aspect-video overflow-hidden rounded-xl border border-border bg-background"
         >

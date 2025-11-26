@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useHydrated } from '@/lib/hooks/useHydrated';
 
 interface TechStackBadgesProps {
   techStack: string[];
@@ -12,6 +13,7 @@ const TechStackBadges: React.FC<TechStackBadgesProps> = ({
   techStack,
   title = 'Technology Stack',
 }) => {
+  const hydrated = useHydrated();
   // Color mapping for different tech categories
   const getTechColor = (tech: string): string => {
     const techLower = tech.toLowerCase();
@@ -88,19 +90,26 @@ const TechStackBadges: React.FC<TechStackBadgesProps> = ({
     <div className="rounded-xl border border-border bg-card/50 p-6">
       <h3 className="mb-4 text-lg font-semibold text-foreground">{title}</h3>
       <div className="flex flex-wrap gap-2">
-        {techStack.map((tech, index) => (
-          <motion.span
-            key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.05 }}
-            className={`rounded-full border px-4 py-2 text-sm font-medium ${getTechColor(
-              tech
-            )}`}
-          >
-            {tech}
-          </motion.span>
-        ))}
+        {techStack.map((tech, index) => {
+          const motionProps = hydrated
+            ? {
+                initial: { opacity: 0, scale: 0.9 },
+                animate: { opacity: 1, scale: 1 },
+                transition: { delay: index * 0.05 },
+              }
+            : { initial: false, animate: false };
+          return (
+            <motion.span
+              key={index}
+              {...motionProps}
+              className={`rounded-full border px-4 py-2 text-sm font-medium ${getTechColor(
+                tech
+              )}`}
+            >
+              {tech}
+            </motion.span>
+          );
+        })}
       </div>
 
       {/* Category Legend */}

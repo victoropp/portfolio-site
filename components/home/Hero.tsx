@@ -4,9 +4,11 @@ import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
 import { projects } from "@/lib/data/projects";
+import { useHydrated } from "@/lib/hooks/useHydrated";
 
 export function Hero() {
   const projectCount = projects.length;
+  const hydrated = useHydrated();
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -71,8 +73,8 @@ export function Hero() {
       {/* Content Container */}
       <motion.div
         variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+        initial={hydrated ? "hidden" : false}
+        animate={hydrated ? "visible" : false}
         className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
         {/* Headline */}
@@ -138,8 +140,8 @@ export function Hero() {
 
         {/* Scroll Indicator */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={hydrated ? { opacity: 0, y: -10 } : false}
+          animate={hydrated ? { opacity: 1, y: 0 } : false}
           transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >

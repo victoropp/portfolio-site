@@ -4,12 +4,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, DollarSign, Target, Zap, CheckCircle } from 'lucide-react';
 import { BusinessImpact } from '@/lib/types/project';
+import { useHydrated } from '@/lib/hooks/useHydrated';
 
 interface MetricsDisplayProps {
   businessImpact: BusinessImpact;
 }
 
 const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ businessImpact }) => {
+  const hydrated = useHydrated();
   const metrics = [
     {
       icon: DollarSign,
@@ -51,12 +53,17 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ businessImpact }) => {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {metrics.map((metric, index) => {
           const Icon = metric.icon;
+          const motionProps = hydrated
+            ? {
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 },
+                transition: { delay: index * 0.1 },
+              }
+            : { initial: false, animate: false };
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              {...motionProps}
               className={`rounded-xl border ${metric.borderColor} ${metric.bgColor} p-6 backdrop-blur-sm`}
             >
               <div className="flex items-center gap-3">

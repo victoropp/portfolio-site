@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence, type Variants } from "framer-motion"
 import { usePathname } from "next/navigation"
-import { useRef, useEffect, useState } from "react"
+import { useHydrated } from "@/lib/hooks/useHydrated"
 
 interface PageTransitionProps {
   children: React.ReactNode
@@ -31,22 +31,20 @@ const variants: Variants = {
 
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname()
-  const [isFirstRender, setIsFirstRender] = useState(true)
-  const prevPathRef = useRef(pathname)
+  const hydrated = useHydrated()
 
-  useEffect(() => {
-    // After first render, allow animations on subsequent navigations
-    if (isFirstRender) {
-      setIsFirstRender(false)
-    }
-    prevPathRef.current = pathname
-  }, [pathname, isFirstRender])
+  // Before hydration: render content directly without animation wrapper
+  // This ensures content is always visible on static export
+  if (!hydrated) {
+    return <>{children}</>
+  }
 
+  // After hydration: enable page transitions for client-side navigation
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" initial={false}>
       <motion.div
         key={pathname}
-        initial={isFirstRender ? false : "hidden"}
+        initial="hidden"
         animate="enter"
         exit="exit"
         variants={variants}

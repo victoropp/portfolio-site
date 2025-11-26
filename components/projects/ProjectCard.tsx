@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Project } from '@/lib/types/project';
 import { ExternalLink, Github } from 'lucide-react';
+import { useHydrated } from '@/lib/hooks/useHydrated';
 
 interface ProjectCardProps {
   project: Project;
@@ -14,13 +15,24 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
   const displayedTechStack = project.techStack.slice(0, 4);
   const remainingCount = project.techStack.length - 4;
+  const hydrated = useHydrated();
+
+  // Before hydration: render without animation to ensure visibility
+  const motionProps = hydrated
+    ? {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.5, delay: index * 0.1 },
+        whileHover: { scale: 1.02, y: -8 },
+      }
+    : {
+        initial: false,
+        animate: false,
+      };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ scale: 1.02, y: -8 }}
+      {...motionProps}
       className="group relative h-full"
     >
       {/* Card container with glassmorphism */}

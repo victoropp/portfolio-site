@@ -1,7 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { motion, useInView, useAnimation, Variants } from "framer-motion"
+import { motion, useInView, Variants } from "framer-motion"
+import { useHydrated } from "@/lib/hooks/useHydrated"
 
 interface ScrollRevealProps {
   children: React.ReactNode
@@ -22,23 +23,7 @@ export function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = React.useRef(null)
   const isInView = useInView(ref, { once, margin: "-100px" })
-  const controls = useAnimation()
-  const [hasMounted, setHasMounted] = React.useState(false)
-
-  // Track if component has mounted (client-side)
-  React.useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  React.useEffect(() => {
-    if (hasMounted) {
-      if (isInView) {
-        controls.start("visible")
-      } else if (!once) {
-        controls.start("hidden")
-      }
-    }
-  }, [isInView, controls, hasMounted, once])
+  const hydrated = useHydrated()
 
   const directionOffset = {
     up: { y: 40, x: 0 },
@@ -64,11 +49,21 @@ export function ScrollReveal({
     },
   }
 
+  // Before hydration: render content visible (no animation)
+  // After hydration: use scroll-triggered animation
+  if (!hydrated) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    )
+  }
+
   return (
     <motion.div
       ref={ref}
-      initial={hasMounted ? "hidden" : "visible"}
-      animate={hasMounted ? controls : "visible"}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
       variants={variants}
       className={className}
     >
