@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  distDir: 'out',
 
   // For project repository (e.g., username.github.io/portfolio-site)
   basePath: process.env.NODE_ENV === 'production' ? '/portfolio-site' : '',
