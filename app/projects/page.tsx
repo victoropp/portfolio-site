@@ -6,8 +6,10 @@ import { projects } from '@/lib/data/projects';
 import { FilterState } from '@/lib/types/project';
 import ProjectCard from '@/components/projects/ProjectCard';
 import ProjectFilters from '@/components/projects/ProjectFilters';
+import { useHydrated } from '@/lib/hooks/useHydrated';
 
 const ProjectsPage = () => {
+  const hydrated = useHydrated();
   const [filters, setFilters] = useState<FilterState>({
     domain: [],
     tech: [],
@@ -108,8 +110,8 @@ const ProjectsPage = () => {
       <section className="border-b border-border bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 py-16">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={hydrated ? { opacity: 0, y: -20 } : false}
+            animate={hydrated ? { opacity: 1, y: 0 } : false}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
@@ -157,7 +159,7 @@ const ProjectsPage = () => {
           <div className="mt-8">
             {filteredProjects.length > 0 ? (
               <motion.div
-                layout
+                layout={hydrated}
                 className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
               >
                 {filteredProjects.map((project, index) => (
@@ -170,8 +172,8 @@ const ProjectsPage = () => {
               </motion.div>
             ) : (
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={hydrated ? { opacity: 0 } : false}
+                animate={hydrated ? { opacity: 1 } : false}
                 className="flex flex-col items-center justify-center py-20"
               >
                 <div className="text-6xl mb-4">🔍</div>
