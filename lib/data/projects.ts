@@ -48,7 +48,7 @@ export const projects: Project[] = [
       '/projects/credit-fraud/roc-curve.png'
     ],
 
-    demoUrl: 'https://credit-fraud-detection.streamlit.app',
+    demoUrl: 'https://credit-card-fraud-detection-ds.streamlit.app/',
     githubUrl: 'https://github.com/victoropp/credit-card-fraud-detection',
 
     seo: {
@@ -116,6 +116,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/covid-xray-classification',
+    demoUrl: 'https://covid-xray-classification-fgfkuryximbqqrnpk3kpnw.streamlit.app/',
 
     seo: {
       metaTitle: 'COVID-19 X-ray Classification - 92% ROC-AUC, Deep Learning | Victor Oppon',
@@ -182,6 +183,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/customer-churn-prediction',
+    demoUrl: 'https://customer-churn-prediction-victoropp.streamlit.app/',
 
     seo: {
       metaTitle: 'Customer Churn Prediction - 98% ROC-AUC, Cost-Optimized | Victor Oppon',
@@ -246,6 +248,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/financial-sentiment-analysis',
+    demoUrl: 'https://financial-sentiment-analysis-8vwypgbkfggeubcaakvekh.streamlit.app/',
 
     seo: {
       metaTitle: 'Financial Sentiment Analysis - 81% Accuracy, BERT & XGBoost | Victor Oppon',
@@ -312,6 +315,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/market-basket-analytics',
+    demoUrl: 'https://market-basket-analytics-victoropp.streamlit.app/',
 
     seo: {
       metaTitle: 'Market Basket Analytics - 20-35% AOV Increase | Victor Oppon',
@@ -376,6 +380,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/stock-market-intelligence',
+    demoUrl: 'https://stock-market-intelligence-victoropp.streamlit.app/',
 
     seo: {
       metaTitle: 'Stock Market Intelligence - 98% Accuracy, LSTM Forecasting | Victor Oppon',
@@ -440,6 +445,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/retail-vision-analytics',
+    demoUrl: 'https://retail-vision-analytics-victoropp.streamlit.app/',
 
     seo: {
       metaTitle: 'Retail Vision Analytics - 92% Accuracy, Fashion AI | Victor Oppon',
@@ -505,6 +511,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/job-change-prediction',
+    demoUrl: 'https://job-change-prediction-victoropp.streamlit.app/',
 
     seo: {
       metaTitle: 'Job Change Prediction - 79.7% ROC-AUC, Cost-Optimized HR Analytics | Victor Oppon',
@@ -569,6 +576,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/enterprise-ner-intelligence',
+    demoUrl: 'https://enterprise-ner-intelligence-victoropp.streamlit.app/',
 
     seo: {
       metaTitle: 'Enterprise NER Intelligence - 92% F1, BERT NLP | Victor Oppon',
@@ -632,6 +640,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/sp500-forecasting',
+    demoUrl: 'https://sp500-forecasting-victoropp.streamlit.app/',
 
     seo: {
       metaTitle: 'S&P 500 Forecasting - Prophet & Portfolio Optimization | Victor Oppon',
@@ -758,6 +767,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/retail-sales-forecasting',
+    demoUrl: 'https://retail-sales-forecasting-ml.streamlit.app/',
 
     seo: {
       metaTitle: 'Retail Sales Forecasting - 13.5% WAPE, LightGBM | Victor Oppon',
@@ -885,6 +895,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/house-price-prediction-streamlit',
+    demoUrl: 'https://house-price-prediction-app-videbimusai.streamlit.app/',
 
     seo: {
       metaTitle: 'House Price Prediction - 90.4% R², CatBoost & SHAP | Victor Oppon',
@@ -949,6 +960,7 @@ export const projects: Project[] = [
     ],
 
     githubUrl: 'https://github.com/victoropp/car_insurance_premium',
+    demoUrl: 'https://victoropp-car-insurance-premium-app-4vbdhw.streamlit.app/',
 
     seo: {
       metaTitle: 'Car Insurance Premium Analytics - 99.78% R², Stacking Ensemble | Victor Oppon',
