@@ -16,7 +16,7 @@ export default function ComponentsTestPage() {
           <h1 className="text-display text-gradient">
             Design System Components
           </h1>
-          <p className="text-body-lg text-muted-foreground">
+          <p className="text-body-lg text-foreground/80">
             Testing all UI components, animations, and design tokens
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function ComponentsTestPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground/80">
                     This card uses the glass styling with backdrop blur and subtle borders.
                   </p>
                 </CardContent>
@@ -68,7 +68,7 @@ export default function ComponentsTestPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground/80">
                     This card has a hover effect that lifts and glows.
                   </p>
                 </CardContent>
@@ -85,7 +85,7 @@ export default function ComponentsTestPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground/80">
                     Custom hover-lift class applied for enhanced interaction.
                   </p>
                 </CardContent>
@@ -190,7 +190,7 @@ export default function ComponentsTestPage() {
               <h3 className="text-subheading">Subheading Text</h3>
               <p className="text-body-lg">Large body text for important content</p>
               <p className="text-base">Base body text for general content</p>
-              <p className="text-sm text-muted-foreground">Small muted text for secondary content</p>
+              <p className="text-sm text-foreground/75">Small text for secondary content</p>
               <p className="text-gradient font-bold text-3xl">Gradient Text Effect</p>
             </div>
           </section>
@@ -274,12 +274,12 @@ export default function ComponentsTestPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="gradient-primary rounded-2xl p-8 border border-border">
                 <h3 className="text-2xl font-bold mb-2">Gradient Primary</h3>
-                <p className="text-muted-foreground">Cyan to purple gradient</p>
+                <p className="text-foreground/80">Cyan to purple gradient</p>
               </div>
 
               <div className="gradient-mesh rounded-2xl p-8 border border-border">
                 <h3 className="text-2xl font-bold mb-2">Gradient Mesh</h3>
-                <p className="text-muted-foreground">Multi-directional gradient mesh</p>
+                <p className="text-foreground/80">Multi-directional gradient mesh</p>
               </div>
             </div>
           </section>
@@ -289,7 +289,7 @@ export default function ComponentsTestPage() {
         <ScrollReveal delay={0.8}>
           <section className="text-center space-y-6 py-12">
             <h2 className="text-heading">Component Library Complete</h2>
-            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-body-lg text-foreground/80 max-w-2xl mx-auto">
               All components are responsive, accessible, and follow the design system specifications.
             </p>
             <div className="flex justify-center gap-4">

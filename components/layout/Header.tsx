@@ -49,7 +49,7 @@ export function Header() {
             href="/"
             className="text-xl md:text-2xl font-bold text-gradient hover:opacity-80 transition-opacity"
           >
-            Victor Oppon
+            Victor Collins Oppon
           </Link>
 
           {/* Desktop Navigation */}
@@ -62,7 +62,7 @@ export function Header() {
                   "text-sm font-medium transition-all duration-200 hover:text-primary",
                   pathname === item.href
                     ? "text-primary"
-                    : "text-foreground/80"
+                    : "text-foreground"
                 )}
               >
                 {item.name}
@@ -102,7 +102,7 @@ export function Header() {
                     "text-sm font-medium py-2 px-4 rounded-lg transition-all duration-200",
                     pathname === item.href
                       ? "bg-primary/20 text-primary"
-                      : "text-foreground/80 hover:bg-muted/20 hover:text-primary"
+                      : "text-foreground/90 hover:bg-muted/20 hover:text-primary"
                   )}
                 >
                   {item.name}

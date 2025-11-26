@@ -5,10 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-import { getFeaturedProjects } from "@/lib/data/projects";
+import { getFeaturedProjects, projects } from "@/lib/data/projects";
 
 export function FeaturedProjects() {
   const featuredProjects = getFeaturedProjects().slice(0, 4);
+  const totalProjects = projects.length;
 
   return (
     <section className="py-20 md:py-32 bg-card/30 relative">
@@ -41,7 +42,7 @@ export function FeaturedProjects() {
                         {project.domain === "retail" && "🛍️"}
                         {project.domain === "nlp" && "💬"}
                       </div>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-muted">
                         {project.domain.toUpperCase()}
                       </p>
                     </div>
@@ -105,7 +106,7 @@ export function FeaturedProjects() {
         <ScrollReveal delay={0.4}>
           <div className="text-center">
             <Button size="lg" variant="outline" className="group">
-              View All {featuredProjects.length}+ Projects
+              View All {totalProjects}+ Projects
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>

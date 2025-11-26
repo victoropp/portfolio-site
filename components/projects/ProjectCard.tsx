@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
       className="group relative h-full"
     >
       {/* Card container with glassmorphism */}
-      <div className="relative h-full rounded-2xl border border-gray-700 bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-lg overflow-hidden transition-all duration-300 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(0,217,255,0.3)]">
+      <div className="relative h-full rounded-2xl border border-border bg-gradient-to-br from-card/90 to-card/80 backdrop-blur-lg overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,217,255,0.3)]">
 
         {/* Thumbnail */}
         <div className="relative h-48 overflow-hidden bg-gradient-to-br from-cyan-500/10 to-purple-500/10">
@@ -49,12 +49,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
         {/* Content */}
         <div className="p-6 space-y-4">
           {/* Title */}
-          <h3 className="text-xl font-bold text-white line-clamp-2 group-hover:text-cyan-400 transition-colors">
+          <h3 className="text-xl font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
             {project.title}
           </h3>
 
           {/* Tagline */}
-          <p className="text-sm text-gray-300 line-clamp-2 leading-relaxed">
+          <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
             {project.tagline}
           </p>
 
@@ -69,7 +69,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
               </span>
             ))}
             {remainingCount > 0 && (
-              <span className="rounded-full bg-gray-700/50 border border-gray-600 px-3 py-1 text-xs font-medium text-gray-400">
+              <span className="rounded-full bg-muted/20 border border-border px-3 py-1 text-xs font-medium text-muted-foreground">
                 +{remainingCount} more
               </span>
             )}
@@ -88,7 +88,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-lg border border-gray-600 bg-gray-800/50 px-4 py-2 text-sm font-semibold text-gray-300 transition-all hover:border-gray-500 hover:bg-gray-700/50"
+              className="flex items-center justify-center rounded-lg border border-border bg-card/50 px-4 py-2 text-sm font-semibold text-muted-foreground transition-all hover:border-border hover:bg-card/80"
             >
               <Github className="h-4 w-4" />
             </a>
@@ -98,7 +98,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-lg border border-gray-600 bg-gray-800/50 px-4 py-2 text-sm font-semibold text-gray-300 transition-all hover:border-gray-500 hover:bg-gray-700/50"
+                className="flex items-center justify-center rounded-lg border border-border bg-card/50 px-4 py-2 text-sm font-semibold text-muted-foreground transition-all hover:border-border hover:bg-card/80"
               >
                 <ExternalLink className="h-4 w-4" />
               </a>

@@ -7,17 +7,17 @@ import { Github, Linkedin, Mail, ExternalLink } from "lucide-react"
 const socialLinks = [
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/victoroppon",
+    href: "https://www.linkedin.com/in/victor-collins-oppon-fcca-mba-bsc-01541019/",
     icon: Linkedin,
   },
   {
     name: "GitHub",
-    href: "https://github.com/victoroppon",
+    href: "https://github.com/victoropp",
     icon: Github,
   },
   {
     name: "Email",
-    href: "mailto:victor@example.com",
+    href: "mailto:victoropp@gmail.com",
     icon: Mail,
   },
 ]
@@ -39,10 +39,10 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold text-gradient mb-4">
-              Victor Oppon
+              Victor Collins Oppon
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Data Scientist & ML Engineer building production ML systems with measurable business impact.
+              Data Scientist & ML Engineer with Finance/Accounting expertise (FCCA, MBA Finance) building production ML systems with measurable business impact.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => {
@@ -104,9 +104,9 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Victor Oppon. All rights reserved.
+            &copy; {currentYear} Victor Collins Oppon. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted">
             Built with Next.js, TypeScript, and Tailwind CSS
           </p>
         </div>

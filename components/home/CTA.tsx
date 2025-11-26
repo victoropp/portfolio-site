@@ -31,35 +31,52 @@ export function CTA() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               {/* Primary CTA - LinkedIn */}
-              <Button size="lg" className="group w-full sm:w-auto">
-                <Linkedin className="mr-2 h-5 w-5" />
-                Connect on LinkedIn
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <Button asChild size="lg" className="group w-full sm:w-auto">
+                <a
+                  href="https://www.linkedin.com/in/victor-collins-oppon-fcca-mba-bsc-01541019/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="mr-2 h-5 w-5" />
+                  Connect on LinkedIn
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
 
               {/* Secondary CTA - Email */}
               <Button
+                asChild
                 variant="secondary"
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                <Mail className="mr-2 h-5 w-5" />
-                Send Email
+                <a href="mailto:victoropp@gmail.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Send Email
+                </a>
               </Button>
 
               {/* Tertiary CTA - Resume */}
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                <a
+                  href="/resume.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
+                </a>
               </Button>
             </div>
 
             {/* Additional Contact Info */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                 <span>Available for immediate hire</span>

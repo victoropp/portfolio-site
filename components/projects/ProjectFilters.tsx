@@ -113,13 +113,13 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         {/* Search Input */}
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
           <input
             type="text"
             placeholder="Search projects..."
             value={filters.search}
             onChange={handleSearchChange}
-            className="w-full rounded-lg border border-gray-700 bg-gray-900/50 py-2 pl-10 pr-4 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+            className="w-full rounded-lg border border-border bg-card/50 py-2 pl-10 pr-4 text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"
           />
         </div>
 
@@ -128,7 +128,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
           {/* Filter Toggle Button (Mobile) */}
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="md:hidden flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-900/50 px-4 py-2 text-white hover:border-gray-600"
+            className="md:hidden flex items-center gap-2 rounded-lg border border-border bg-card/50 px-4 py-2 text-foreground hover:border-border"
           >
             <Filter className="h-4 w-4" />
             Filters
@@ -144,7 +144,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
             <select
               value={filters.sort}
               onChange={(e) => handleSortChange(e.target.value as SortOption)}
-              className="appearance-none rounded-lg border border-gray-700 bg-gray-900/50 px-4 py-2 pr-10 text-white hover:border-gray-600 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+              className="appearance-none rounded-lg border border-border bg-card/50 px-4 py-2 pr-10 text-foreground hover:border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"
             >
               {sortOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -152,7 +152,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            <ChevronDown className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground pointer-events-none" />
           </div>
         </div>
       </div>
@@ -161,13 +161,13 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
       <div
         className={`${
           showFilters ? 'block' : 'hidden'
-        } md:block space-y-4 rounded-lg border border-gray-700 bg-gray-900/30 p-4`}
+        } md:block space-y-4 rounded-lg border border-border bg-card/30 p-4`}
       >
         {/* Results Count and Clear Button */}
         <div className="flex items-center justify-between">
-          <p className="text-sm text-gray-400">
-            Showing <span className="font-semibold text-white">{projectCount}</span> of{' '}
-            <span className="font-semibold text-white">{totalCount}</span> projects
+          <p className="text-sm text-muted-foreground">
+            Showing <span className="font-semibold text-foreground">{projectCount}</span> of{' '}
+            <span className="font-semibold text-foreground">{totalCount}</span> projects
           </p>
           {activeFilterCount > 0 && (
             <button
@@ -182,7 +182,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
         {/* Domain Filters */}
         <div>
-          <h3 className="mb-2 text-sm font-semibold text-white">Domain</h3>
+          <h3 className="mb-2 text-sm font-semibold text-foreground">Domain</h3>
           <div className="flex flex-wrap gap-2">
             {domainOptions.map((option) => (
               <button
@@ -190,8 +190,8 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                 onClick={() => handleDomainToggle(option.value)}
                 className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${
                   filters.domain.includes(option.value)
-                    ? 'border-cyan-500 bg-cyan-500/20 text-cyan-300'
-                    : 'border-gray-600 bg-gray-800/50 text-gray-400 hover:border-gray-500 hover:text-gray-300'
+                    ? 'border-primary bg-primary/20 text-primary'
+                    : 'border-border bg-card/50 text-muted-foreground hover:border-border hover:text-muted-foreground'
                 }`}
               >
                 {option.label}
@@ -202,7 +202,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
         {/* Tech Stack Filters */}
         <div>
-          <h3 className="mb-2 text-sm font-semibold text-white">Technology</h3>
+          <h3 className="mb-2 text-sm font-semibold text-foreground">Technology</h3>
           <div className="flex flex-wrap gap-2">
             {techOptions.map((tech) => (
               <button
@@ -210,8 +210,8 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                 onClick={() => handleTechToggle(tech)}
                 className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${
                   filters.tech.includes(tech)
-                    ? 'border-purple-500 bg-purple-500/20 text-purple-300'
-                    : 'border-gray-600 bg-gray-800/50 text-gray-400 hover:border-gray-500 hover:text-gray-300'
+                    ? 'border-secondary bg-secondary/20 text-secondary'
+                    : 'border-border bg-card/50 text-muted-foreground hover:border-border hover:text-muted-foreground'
                 }`}
               >
                 {tech}
@@ -222,7 +222,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
         {/* Industry Filters */}
         <div>
-          <h3 className="mb-2 text-sm font-semibold text-white">Industry</h3>
+          <h3 className="mb-2 text-sm font-semibold text-foreground">Industry</h3>
           <div className="flex flex-wrap gap-2">
             {industryOptions.map((option) => (
               <button
@@ -230,8 +230,8 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                 onClick={() => handleIndustryToggle(option.value)}
                 className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${
                   filters.industry.includes(option.value)
-                    ? 'border-green-500 bg-green-500/20 text-green-300'
-                    : 'border-gray-600 bg-gray-800/50 text-gray-400 hover:border-gray-500 hover:text-gray-300'
+                    ? 'border-accent bg-accent/20 text-accent'
+                    : 'border-border bg-card/50 text-muted-foreground hover:border-border hover:text-muted-foreground'
                 }`}
               >
                 {option.label}

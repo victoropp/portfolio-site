@@ -49,7 +49,7 @@ export const projects: Project[] = [
     ],
 
     demoUrl: 'https://credit-fraud-detection.streamlit.app',
-    githubUrl: 'https://github.com/victoroppon/credit-card-fraud-detection',
+    githubUrl: 'https://github.com/victoropp/credit-card-fraud-detection',
 
     seo: {
       metaTitle: 'Credit Card Fraud Detection - 97% ROC-AUC, $131K Savings | Victor Oppon',
@@ -115,7 +115,7 @@ export const projects: Project[] = [
       '/projects/covid-xray/roc-curves.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/covid-xray-classification',
+    githubUrl: 'https://github.com/victoropp/covid-xray-classification',
 
     seo: {
       metaTitle: 'COVID-19 X-ray Classification - 92% ROC-AUC, Deep Learning | Victor Oppon',
@@ -181,7 +181,7 @@ export const projects: Project[] = [
       '/projects/customer-churn/model-comparison.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/customer-churn-prediction',
+    githubUrl: 'https://github.com/victoropp/customer-churn-prediction',
 
     seo: {
       metaTitle: 'Customer Churn Prediction - 98% ROC-AUC, Cost-Optimized | Victor Oppon',
@@ -206,37 +206,37 @@ export const projects: Project[] = [
     id: '4',
     slug: 'financial-sentiment-analysis',
     title: 'Financial Sentiment Analysis',
-    tagline: 'NLP platform with BERT and XGBoost achieving 82% F1-score on 4,846 expert-annotated financial sentences',
+    tagline: 'NLP platform with BERT-MPNet achieving 81% accuracy on 4,846 expert-annotated financial sentences',
 
     domain: 'nlp',
     industry: ['financial-services', 'fintech', 'trading', 'investment-research', 'market-intelligence'],
 
     keyMetric: {
-      label: 'F1-Score',
-      value: '81.71%',
-      context: 'XGBoost model on financial news'
+      label: 'Accuracy',
+      value: '81.2%',
+      context: 'BERT-MPNet on financial news'
     },
 
     businessImpact: {
       roi: 'Market intelligence automation',
-      accuracy: '82.12% accuracy',
+      accuracy: '81.16% accuracy (BERT-MPNet)',
       other: [
-        { label: 'XGBoost Precision', value: '81.81%' },
-        { label: 'XGBoost Recall', value: '82.12%' },
+        { label: 'F1-Score', value: '81.31%' },
+        { label: 'XGBoost Accuracy', value: '74.41%' },
         { label: 'Inference Speed', value: 'Real-time' }
       ]
     },
 
-    techStack: ['BERT', 'FinBERT', 'XGBoost', 'Random Forest', 'SVM', 'TF-IDF', 'Transformers', 'Streamlit', 'FastAPI'],
+    techStack: ['BERT', 'sentence-transformers', 'XGBoost', 'Random Forest', 'SVM', 'TF-IDF', 'Transformers', 'Streamlit', 'FastAPI'],
     modelType: 'Multi-class Classification (NLP)',
 
-    overview: 'Production-ready financial sentiment analysis platform with Transformer models (BERT, FinBERT) and Traditional ML (XGBoost, Random Forest, SVM). Real-time sentiment classification with confidence scores across 4,846 expert-annotated financial news sentences.',
+    overview: 'Production-ready financial sentiment analysis platform with Transformer models (BERT-MPNet, MiniLM) and Traditional ML (XGBoost, Random Forest, SVM, Logistic Regression). Real-time sentiment classification with confidence scores across 4,846 expert-annotated financial news sentences.',
 
     challenge: '4,846 financial sentences across 3 classes (Positive: 28%, Neutral: 59%, Negative: 13%). Need domain-specific understanding of financial language and real-time inference for market intelligence.',
 
-    solution: 'XGBoost with TF-IDF features (5,000 max features, 1-3 n-grams), BERT/FinBERT infrastructure ready for fine-tuning, class-weighted loss functions, interactive Streamlit dashboard with batch processing.',
+    solution: 'BERT-MPNet embeddings with Logistic Regression classifier for best accuracy, XGBoost with TF-IDF features (5,000 max features, 1-3 n-grams) as traditional ML baseline, class-weighted loss functions, interactive Streamlit dashboard with batch processing.',
 
-    results: 'XGBoost: 82.12% accuracy, 81.71% F1-score. Per-class: Negative 82.98% precision, Neutral 90.97% recall, Positive 73.53% recall. Multi-model comparison framework with real-time predictions.',
+    results: 'BERT-MPNet: 81.16% accuracy, 81.31% F1-score. XGBoost: 74.41% accuracy, 74.22% F1-score. 6 models compared with comprehensive evaluation. Real-time predictions via Streamlit dashboard.',
 
     thumbnail: '/projects/financial-sentiment/thumbnail.webp',
     images: [
@@ -245,15 +245,15 @@ export const projects: Project[] = [
       '/projects/financial-sentiment/model-comparison.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/financial-sentiment-analysis',
+    githubUrl: 'https://github.com/victoropp/financial-sentiment-analysis',
 
     seo: {
-      metaTitle: 'Financial Sentiment Analysis - 82% F1, BERT & XGBoost | Victor Oppon',
-      metaDescription: 'Financial NLP platform with BERT, FinBERT, and XGBoost achieving 82% accuracy. Real-time sentiment classification on expert-annotated financial news.',
+      metaTitle: 'Financial Sentiment Analysis - 81% Accuracy, BERT & XGBoost | Victor Oppon',
+      metaDescription: 'Financial NLP platform with BERT-MPNet achieving 81% accuracy. Real-time sentiment classification on 4,846 expert-annotated financial news sentences.',
       keywords: [
         'financial sentiment analysis',
         'BERT financial NLP',
-        'FinBERT transformers',
+        'sentence-transformers',
         'XGBoost NLP',
         'financial news classification',
         'market sentiment analysis',
@@ -311,7 +311,7 @@ export const projects: Project[] = [
       '/projects/market-basket/customer-segments.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/market-basket-analytics',
+    githubUrl: 'https://github.com/victoropp/market-basket-analytics',
 
     seo: {
       metaTitle: 'Market Basket Analytics - 20-35% AOV Increase | Victor Oppon',
@@ -375,7 +375,7 @@ export const projects: Project[] = [
       '/projects/stock-market/technical-indicators.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/stock-market-intelligence',
+    githubUrl: 'https://github.com/victoropp/stock-market-intelligence',
 
     seo: {
       metaTitle: 'Stock Market Intelligence - 98% Accuracy, LSTM Forecasting | Victor Oppon',
@@ -439,7 +439,7 @@ export const projects: Project[] = [
       '/projects/retail-vision/roc-curves.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/retail-vision-analytics',
+    githubUrl: 'https://github.com/victoropp/retail-vision-analytics',
 
     seo: {
       metaTitle: 'Retail Vision Analytics - 92% Accuracy, Fashion AI | Victor Oppon',
@@ -504,7 +504,7 @@ export const projects: Project[] = [
       '/projects/job-change/model-comparison.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/job-change-prediction',
+    githubUrl: 'https://github.com/victoropp/job-change-prediction',
 
     seo: {
       metaTitle: 'Job Change Prediction - 79.7% ROC-AUC, Cost-Optimized HR Analytics | Victor Oppon',
@@ -568,7 +568,7 @@ export const projects: Project[] = [
       '/projects/enterprise-ner/model-comparison.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/enterprise-ner-intelligence',
+    githubUrl: 'https://github.com/victoropp/enterprise-ner-intelligence',
 
     seo: {
       metaTitle: 'Enterprise NER Intelligence - 92% F1, BERT NLP | Victor Oppon',
@@ -631,7 +631,7 @@ export const projects: Project[] = [
       '/projects/sp500-forecasting/efficient-frontier.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/sp500-forecasting',
+    githubUrl: 'https://github.com/victoropp/sp500-forecasting',
 
     seo: {
       metaTitle: 'S&P 500 Forecasting - Prophet & Portfolio Optimization | Victor Oppon',
@@ -719,57 +719,57 @@ export const projects: Project[] = [
     id: '12',
     slug: 'retail-sales-forecasting',
     title: 'Retail Sales Forecasting',
-    tagline: 'Temporal Fusion Transformers achieving <12% WAPE for multi-horizon 16-day forecasting across 54 stores',
+    tagline: 'LightGBM achieving 13.5% WAPE for 16-day forecasting across 54 stores with 56 engineered features',
 
     domain: 'retail',
     industry: ['grocery', 'retail', 'supply-chain', 'inventory-management'],
 
     keyMetric: {
       label: 'WAPE',
-      value: '<12%',
+      value: '13.5%',
       context: '16-day ahead forecasts'
     },
 
     businessImpact: {
       roi: '$500K+ annual savings',
       other: [
-        { label: 'Inventory Waste Reduction', value: '15-25%' },
-        { label: 'Stockout Reduction', value: '30-40%' },
-        { label: 'Labor Efficiency', value: '10-20% improvement' }
+        { label: 'Inventory Waste Reduction', value: '15-20%' },
+        { label: 'Stockout Reduction', value: '25-30%' },
+        { label: 'Labor Efficiency', value: '10-15% improvement' }
       ]
     },
 
-    techStack: ['Temporal Fusion Transformer', 'LightGBM', 'XGBoost', 'Prophet', 'LSTM', 'TensorFlow', 'Streamlit'],
+    techStack: ['LightGBM', 'XGBoost', 'Streamlit', 'Plotly', 'Scikit-learn', 'Pandas'],
     modelType: 'Multi-Horizon Time Series Forecasting',
 
-    overview: 'State-of-the-art forecasting platform using Temporal Fusion Transformers for Ecuadorian grocery retailer with 54 stores and 33 product families. Multi-horizon 16-day predictions with attention-based explainability.',
+    overview: 'Production-grade forecasting platform using LightGBM for Ecuadorian grocery retailer with 54 stores and 33 product families. 16-day predictions with 56 engineered features and interactive Streamlit dashboard.',
 
-    challenge: '3M+ training records (2013-2017) across 54 stores and 33 product families. Need simultaneous 16-day forecasts (not iterative), uncertainty quantification, and 50+ engineered features (temporal, lag, rolling, external).',
+    challenge: '3M+ training records (2013-2017) across 54 stores and 33 product families. Need 16-day forecasts with 56 engineered features (temporal, lag, rolling, external) and proper time series validation.',
 
-    solution: 'Temporal Fusion Transformer with multi-head attention, 50+ features (oil prices, holidays, transactions, promotions), hierarchical forecasting, probabilistic predictions with intervals, 6 models compared.',
+    solution: 'LightGBM gradient boosting with 56 features (oil prices, holidays, transactions, promotions, lag, rolling statistics), time series cross-validation, early stopping, comprehensive evaluation metrics.',
 
-    results: 'TFT: <12% WAPE (best), 11% WAPE average. LightGBM: ~12% WAPE. Attention-based explainability, multi-horizon simultaneous predictions, external regressors integration.',
+    results: 'LightGBM: 13.53% WAPE (industry-excellent), RMSE 211.84, MAE 64.02. XGBoost: 13.91% WAPE. Interactive dashboard with ROI calculator, feature importance analysis.',
 
     thumbnail: '/projects/retail-forecasting/thumbnail.webp',
     images: [
       '/projects/retail-forecasting/demo-1.webp',
       '/projects/retail-forecasting/forecast-plot.png',
-      '/projects/retail-forecasting/attention-weights.png'
+      '/projects/retail-forecasting/feature-importance.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/retail-sales-forecasting',
+    githubUrl: 'https://github.com/victoropp/retail-sales-forecasting',
 
     seo: {
-      metaTitle: 'Retail Sales Forecasting - <12% WAPE, Temporal Fusion Transformers | Victor Oppon',
-      metaDescription: 'Multi-horizon retail forecasting with Temporal Fusion Transformers achieving <12% WAPE. 16-day predictions across 54 stores with attention explainability.',
+      metaTitle: 'Retail Sales Forecasting - 13.5% WAPE, LightGBM | Victor Oppon',
+      metaDescription: 'Multi-horizon retail forecasting with LightGBM achieving 13.5% WAPE. 16-day predictions across 54 stores with 56 engineered features.',
       keywords: [
         'retail forecasting',
-        'Temporal Fusion Transformer',
+        'LightGBM time series',
         'multi-horizon forecasting',
-        'time series deep learning',
-        'inventory optimization',
         'demand forecasting',
-        'attention mechanism'
+        'inventory optimization',
+        'gradient boosting',
+        'feature engineering'
       ]
     },
 
@@ -820,7 +820,7 @@ export const projects: Project[] = [
       '/projects/coco-analytics/traffic-analysis.png'
     ],
 
-    githubUrl: 'https://github.com/victoroppon/coco-smart-analytics',
+    githubUrl: 'https://github.com/victoropp/coco-smart-analytics',
 
     seo: {
       metaTitle: 'COCO Smart Analytics - Object Detection, Faster R-CNN | Victor Oppon',
@@ -839,6 +839,262 @@ export const projects: Project[] = [
     featured: false,
     order: 13,
     date: '2024-11-23'
+  },
+
+  {
+    id: '14',
+    slug: 'house-price-prediction',
+    title: 'House Price Prediction',
+    tagline: 'CatBoost regression achieving 90.4% R² accuracy with 223 engineered features and SHAP explainability',
+
+    domain: 'finance',
+    industry: ['real-estate', 'proptech', 'mortgage-lending', 'property-valuation', 'investment-analysis'],
+
+    keyMetric: {
+      label: 'R² Score',
+      value: '90.4%',
+      context: 'CatBoost prediction accuracy'
+    },
+
+    businessImpact: {
+      roi: 'Property valuation automation',
+      accuracy: '90.4% R² (0.904)',
+      other: [
+        { label: 'RMSE', value: '0.0485' },
+        { label: 'MAE', value: '0.0318' },
+        { label: 'Features Engineered', value: '223 from 81 original' }
+      ]
+    },
+
+    techStack: ['CatBoost', 'SHAP', 'Streamlit', 'Plotly', 'Scikit-learn', 'Pandas', 'Python'],
+    modelType: 'Regression',
+
+    overview: 'Enterprise-grade property valuation platform using CatBoost regression with 223 engineered features from 81 original variables. Achieves 90.4% R² accuracy with SHAP explainability for transparent pricing decisions.',
+
+    challenge: 'Complex housing dataset with 81 variables requiring extensive feature engineering. Need accurate price predictions with model interpretability for real estate professionals and lenders.',
+
+    solution: 'CatBoost regression with 223 engineered features, 5-fold cross-validation, SHAP for real-time model explanations, feature importance via 6 comparative methodologies, partial dependence plotting.',
+
+    results: '90.4% R² accuracy, RMSE 0.0485, MAE 0.0318, <500ms prediction latency, <2s page load, interactive Streamlit dashboard with Quick, Advanced, and Batch prediction modes.',
+
+    thumbnail: '/projects/house-price/thumbnail.webp',
+    images: [
+      '/projects/house-price/demo-1.webp',
+      '/projects/house-price/shap-summary.png',
+      '/projects/house-price/feature-importance.png'
+    ],
+
+    githubUrl: 'https://github.com/victoropp/house-price-prediction-streamlit',
+
+    seo: {
+      metaTitle: 'House Price Prediction - 90.4% R², CatBoost & SHAP | Victor Oppon',
+      metaDescription: 'Property valuation platform with CatBoost achieving 90.4% R² accuracy. 223 engineered features, SHAP explainability, interactive Streamlit dashboard.',
+      keywords: [
+        'house price prediction',
+        'CatBoost regression',
+        'property valuation',
+        'real estate ML',
+        'SHAP explainability',
+        'feature engineering',
+        'proptech analytics'
+      ]
+    },
+
+    featured: false,
+    order: 14,
+    date: '2024-11-24'
+  },
+
+  {
+    id: '15',
+    slug: 'car-insurance-premium',
+    title: 'Car Insurance Premium Analytics',
+    tagline: 'Stacking ensemble achieving 99.78% R² accuracy with real-time premium prediction and explainable AI',
+
+    domain: 'finance',
+    industry: ['insurance', 'fintech', 'automotive', 'risk-management', 'underwriting'],
+
+    keyMetric: {
+      label: 'R² Score',
+      value: '99.78%',
+      context: 'Stacking ensemble accuracy'
+    },
+
+    businessImpact: {
+      roi: 'Premium pricing automation',
+      accuracy: '99.78% R² (Stacking Linear)',
+      other: [
+        { label: 'RMSE', value: '0.272' },
+        { label: 'MAE', value: '0.201' },
+        { label: 'Models Compared', value: 'XGBoost, LightGBM, CatBoost, Stacking' }
+      ]
+    },
+
+    techStack: ['XGBoost', 'LightGBM', 'CatBoost', 'Scikit-learn', 'Streamlit', 'Plotly', 'Pandas', 'NumPy'],
+    modelType: 'Regression (Ensemble)',
+
+    overview: 'Advanced ML platform for car insurance premium prediction using stacking ensemble achieving 99.78% R² accuracy. Features smart calculator, what-if analysis, real-time model comparison, and explainable AI for transparent pricing decisions.',
+
+    challenge: 'Complex insurance pricing with multiple risk factors. Need accurate premium predictions with model interpretability for underwriters and customers. Requires real-time inference for instant quotes.',
+
+    solution: 'Stacking ensemble combining XGBoost, LightGBM, and CatBoost with linear meta-learner. Interactive what-if analysis for scenario exploration, A/B testing capabilities, multi-format report exports.',
+
+    results: '99.78% R² accuracy (Stacking Linear), RMSE 0.272, MAE 0.201, real-time premium estimation, interactive Streamlit dashboard with model comparison and performance insights.',
+
+    thumbnail: '/projects/car-insurance/thumbnail.webp',
+    images: [
+      '/projects/car-insurance/demo-1.webp',
+      '/projects/car-insurance/model-comparison.png',
+      '/projects/car-insurance/what-if-analysis.png'
+    ],
+
+    githubUrl: 'https://github.com/victoropp/car_insurance_premium',
+
+    seo: {
+      metaTitle: 'Car Insurance Premium Analytics - 99.78% R², Stacking Ensemble | Victor Oppon',
+      metaDescription: 'Insurance premium prediction platform with stacking ensemble achieving 99.78% R² accuracy. XGBoost, LightGBM, CatBoost with explainable AI.',
+      keywords: [
+        'insurance premium prediction',
+        'stacking ensemble',
+        'XGBoost insurance',
+        'car insurance ML',
+        'premium pricing',
+        'risk analytics',
+        'insurtech'
+      ]
+    },
+
+    featured: false,
+    order: 15,
+    date: '2024-11-24'
+  },
+
+  {
+    id: '16',
+    slug: 'wine-clustering-analysis',
+    title: 'Wine Clustering Analysis',
+    tagline: 'GMM vs K-Means comparison achieving 0.898 ARI with automatic cluster selection and uncertainty quantification',
+
+    domain: 'analytics',
+    industry: ['food-beverage', 'bioinformatics', 'customer-segmentation', 'healthcare', 'quality-control'],
+
+    keyMetric: {
+      label: 'Adjusted Rand Index',
+      value: '0.898',
+      context: 'K-Means clustering accuracy'
+    },
+
+    businessImpact: {
+      roi: 'Product segmentation automation',
+      accuracy: '0.898 ARI (K-Means)',
+      other: [
+        { label: 'GMM ARI', value: '0.880' },
+        { label: 'Silhouette Score', value: '0.285' },
+        { label: 'Chemical Features', value: '13' }
+      ]
+    },
+
+    techStack: ['Scikit-learn', 'GMM', 'K-Means', 'DBSCAN', 'PCA', 't-SNE', 'Pandas', 'Matplotlib', 'Seaborn'],
+    modelType: 'Unsupervised Clustering',
+
+    overview: 'Production-grade clustering analysis comparing Gaussian Mixture Models and K-Means on UCI Wine Dataset. Features automatic cluster selection (Elbow, Silhouette, AIC, BIC), uncertainty quantification, and comprehensive visualizations.',
+
+    challenge: '178 wine samples with 13 chemical features and 3 unknown cultivar classes. Need to discover natural groupings without labeled data while providing confidence scores for business decisions.',
+
+    solution: 'GMM for probabilistic soft clustering with uncertainty quantification, K-Means for hard clustering baseline, DBSCAN for density-based comparison. PCA and t-SNE for visualization, automatic optimal k selection.',
+
+    results: 'K-Means: 0.898 ARI, 0.285 silhouette. GMM: 0.880 ARI, 0.284 silhouette, BIC 5806.3. Confidence heatmaps, entropy distributions, decision boundary visualizations.',
+
+    thumbnail: '/projects/wine-clustering/thumbnail.webp',
+    images: [
+      '/projects/wine-clustering/demo-1.webp',
+      '/projects/wine-clustering/pca-clusters.png',
+      '/projects/wine-clustering/confusion-matrix.png'
+    ],
+
+    githubUrl: 'https://github.com/victoropp/wine-clustering-gmm-kmeans',
+
+    seo: {
+      metaTitle: 'Wine Clustering Analysis - GMM vs K-Means, 0.898 ARI | Victor Oppon',
+      metaDescription: 'Unsupervised clustering comparing GMM and K-Means on wine chemical data. 0.898 ARI accuracy with automatic cluster selection and uncertainty quantification.',
+      keywords: [
+        'wine clustering',
+        'Gaussian Mixture Models',
+        'K-Means clustering',
+        'unsupervised learning',
+        'PCA visualization',
+        't-SNE',
+        'customer segmentation'
+      ]
+    },
+
+    featured: false,
+    order: 16,
+    date: '2024-11-24'
+  },
+
+  {
+    id: '17',
+    slug: 'naive-bayes-spam-detection',
+    title: 'Naive Bayes Spam Detection',
+    tagline: 'MATLAB-based email classifier achieving 91.6% ROC-AUC with hyperparameter optimization and bootstrap validation',
+
+    domain: 'nlp',
+    industry: ['email-security', 'cybersecurity', 'telecommunications', 'enterprise-software'],
+
+    keyMetric: {
+      label: 'ROC-AUC',
+      value: '91.6%',
+      context: 'Spam classification accuracy'
+    },
+
+    businessImpact: {
+      roi: 'Email security automation',
+      accuracy: '85.94% test accuracy',
+      other: [
+        { label: 'Precision', value: '0.838' },
+        { label: 'Recall', value: '0.797' },
+        { label: 'F1-Score', value: '0.817' }
+      ]
+    },
+
+    techStack: ['MATLAB', 'Naive Bayes', 'Logistic Regression', 'UCI Spambase', 'Bootstrap CI', 'Cross-Validation'],
+    modelType: 'Binary Classification',
+
+    overview: 'Production-ready email spam classifier using Naive Bayes on UCI Spambase dataset (4,601 emails, 57 features). Features hyperparameter optimization, 5-fold cross-validation, and bootstrap confidence intervals.',
+
+    challenge: 'UCI Spambase with 4,601 emails and 57 features. Need robust spam detection with statistical confidence, feature selection to reduce dimensionality, and production-deployable model.',
+
+    solution: 'Naive Bayes with kernel optimization, low-variance and high-correlation feature elimination, stratified 5-fold CV, grid search with optimization surface visualization, bootstrap 95% CI estimation.',
+
+    results: '85.94% accuracy, 91.6% ROC-AUC, 0.838 precision, 0.797 recall, 0.817 F1-score. 95% CI: [83.99%, 87.61%]. Logistic Regression baseline: 87.68%. Exportable model for production.',
+
+    thumbnail: '/projects/spam-detection/thumbnail.webp',
+    images: [
+      '/projects/spam-detection/demo-1.webp',
+      '/projects/spam-detection/roc-curve.png',
+      '/projects/spam-detection/confusion-matrix.png'
+    ],
+
+    githubUrl: 'https://github.com/victoropp/naive-bayes-spam-detection',
+
+    seo: {
+      metaTitle: 'Naive Bayes Spam Detection - 91.6% ROC-AUC, MATLAB | Victor Oppon',
+      metaDescription: 'Email spam classifier using Naive Bayes achieving 91.6% ROC-AUC. MATLAB implementation with hyperparameter optimization and bootstrap validation.',
+      keywords: [
+        'spam detection',
+        'Naive Bayes classifier',
+        'email classification',
+        'MATLAB machine learning',
+        'UCI Spambase',
+        'cybersecurity ML',
+        'text classification'
+      ]
+    },
+
+    featured: false,
+    order: 17,
+    date: '2024-11-24'
   }
 ];
 

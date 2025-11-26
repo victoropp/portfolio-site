@@ -15,13 +15,13 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
 
   if (!demoUrl) {
     return (
-      <div className="rounded-xl border border-gray-700 bg-gray-900/50 p-8">
+      <div className="rounded-xl border border-border bg-card/50 p-8">
         <div className="text-center">
           <div className="mb-4 text-5xl">🚧</div>
-          <h3 className="mb-2 text-xl font-semibold text-white">
+          <h3 className="mb-2 text-xl font-semibold text-foreground">
             Demo Coming Soon
           </h3>
-          <p className="text-gray-400">
+          <p className="text-muted-foreground">
             Interactive demo is currently being deployed. Check back soon!
           </p>
         </div>
@@ -32,14 +32,14 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
   return (
     <div className="space-y-4">
       {/* Demo Header */}
-      <div className="flex items-center justify-between rounded-xl border border-gray-700 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-4">
+      <div className="flex items-center justify-between rounded-xl border border-border bg-gradient-to-r from-primary/10 to-secondary/10 p-4">
         <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-cyan-500/20 p-2">
-            <Play className="h-5 w-5 text-cyan-400" />
+          <div className="rounded-lg bg-primary/20 p-2">
+            <Play className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-white">Live Demo</h3>
-            <p className="text-sm text-gray-400">
+            <h3 className="text-lg font-semibold text-foreground">Live Demo</h3>
+            <p className="text-sm text-muted-foreground">
               Interactive Streamlit application
             </p>
           </div>
@@ -49,7 +49,7 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
             href={demoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-400 transition-all hover:bg-cyan-500/20"
+            className="flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-all hover:bg-primary/20"
           >
             <ExternalLink className="h-4 w-4" />
             Open in New Tab
@@ -62,15 +62,15 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="relative aspect-video overflow-hidden rounded-xl border border-gray-700 bg-gradient-to-br from-gray-900 to-gray-800"
+          className="relative aspect-video overflow-hidden rounded-xl border border-border bg-gradient-to-br from-background to-card"
         >
           {/* Preview/Placeholder */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <div className="mb-4 text-6xl">📊</div>
-            <h4 className="mb-2 text-xl font-semibold text-white">
+            <h4 className="mb-2 text-xl font-semibold text-foreground">
               {title} Demo
             </h4>
-            <p className="mb-6 text-sm text-gray-400">
+            <p className="mb-6 text-sm text-muted-foreground">
               Click below to load the interactive demo
             </p>
             <button
@@ -84,7 +84,7 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
 
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-purple-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary"></div>
           </div>
         </motion.div>
       ) : (
@@ -92,14 +92,14 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
-          className="relative aspect-video overflow-hidden rounded-xl border border-gray-700 bg-gray-900"
+          className="relative aspect-video overflow-hidden rounded-xl border border-border bg-background"
         >
           {/* Loading State */}
           {!isLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+            <div className="absolute inset-0 flex items-center justify-center bg-background">
               <div className="text-center">
-                <div className="mb-4 h-12 w-12 animate-spin rounded-full border-4 border-gray-700 border-t-cyan-500"></div>
-                <p className="text-sm text-gray-400">Loading demo...</p>
+                <div className="mb-4 h-12 w-12 animate-spin rounded-full border-4 border-border border-t-primary"></div>
+                <p className="text-sm text-muted-foreground">Loading demo...</p>
               </div>
             </div>
           )}
@@ -131,25 +131,25 @@ const DemoEmbed: React.FC<DemoEmbedProps> = ({ demoUrl, title }) => {
       )}
 
       {/* Demo Info */}
-      <div className="rounded-lg border border-gray-700 bg-gray-900/30 p-4">
-        <p className="text-sm text-gray-400">
+      <div className="rounded-lg border border-border bg-card/30 p-4">
+        <p className="text-sm text-muted-foreground">
           This is a live, interactive demo deployed on Streamlit Cloud. You can:
         </p>
-        <ul className="mt-2 space-y-1 text-sm text-gray-300">
+        <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
           <li className="flex items-center gap-2">
-            <span className="text-cyan-400">•</span>
+            <span className="text-primary">•</span>
             Upload your own data for predictions
           </li>
           <li className="flex items-center gap-2">
-            <span className="text-cyan-400">•</span>
+            <span className="text-primary">•</span>
             Explore model performance metrics
           </li>
           <li className="flex items-center gap-2">
-            <span className="text-cyan-400">•</span>
+            <span className="text-primary">•</span>
             View interactive visualizations
           </li>
           <li className="flex items-center gap-2">
-            <span className="text-cyan-400">•</span>
+            <span className="text-primary">•</span>
             Understand model predictions with explainability
           </li>
         </ul>

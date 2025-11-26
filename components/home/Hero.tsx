@@ -3,8 +3,10 @@
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
+import { projects } from "@/lib/data/projects";
 
 export function Hero() {
+  const projectCount = projects.length;
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -81,8 +83,8 @@ export function Hero() {
         >
           Building Production ML Systems
           <br />
-          with Measurable{" "}
-          <span className="text-gradient">$M+ Business Impact</span>
+          that Drive{" "}
+          <span className="text-gradient">Real Business Results</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -90,10 +92,10 @@ export function Hero() {
           variants={itemVariants}
           className="text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8"
         >
-          Data Scientist & ML Engineer specializing in{" "}
-          <span className="text-primary font-semibold">Financial AI</span>,{" "}
-          <span className="text-secondary font-semibold">Healthcare ML</span>, and{" "}
-          <span className="text-accent font-semibold">Predictive Analytics</span>
+          Data Scientist & ML Engineer with Finance/Accounting expertise (FCCA, MBA Finance) delivering{" "}
+          <span className="text-primary font-semibold">End-to-End ML Solutions</span> across{" "}
+          <span className="text-secondary font-semibold">Finance, Healthcare, Retail, Insurance, NLP, Computer Vision</span>, and{" "}
+          <span className="text-accent font-semibold">more</span>
         </motion.p>
 
         {/* Metrics Bar */}
@@ -103,15 +105,19 @@ export function Hero() {
         >
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-            <span className="text-foreground font-semibold">13+ Projects</span>
+            <span className="text-foreground font-semibold">{projectCount}+ Production Projects</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse-glow" />
-            <span className="text-money font-semibold">$5M+ ROI</span>
+            <span className="text-foreground font-semibold">15+ Years Experience</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-secondary animate-pulse-glow" />
-            <span className="text-foreground font-semibold">98% Avg Accuracy</span>
+            <span className="text-foreground font-semibold">ACCA Certified</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
+            <span className="text-foreground font-semibold">End-to-End ML Pipelines</span>
           </div>
         </motion.div>
 

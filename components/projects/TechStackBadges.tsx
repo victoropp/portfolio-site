@@ -85,8 +85,8 @@ const TechStackBadges: React.FC<TechStackBadgesProps> = ({
   };
 
   return (
-    <div className="rounded-xl border border-gray-700 bg-gray-900/50 p-6">
-      <h3 className="mb-4 text-lg font-semibold text-white">{title}</h3>
+    <div className="rounded-xl border border-border bg-card/50 p-6">
+      <h3 className="mb-4 text-lg font-semibold text-foreground">{title}</h3>
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech, index) => (
           <motion.span
@@ -107,19 +107,19 @@ const TechStackBadges: React.FC<TechStackBadgesProps> = ({
       <div className="mt-6 grid grid-cols-2 gap-2 text-xs md:grid-cols-4">
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-full bg-orange-500/50"></div>
-          <span className="text-gray-400">ML Frameworks</span>
+          <span className="text-muted-foreground">ML Frameworks</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-full bg-red-500/50"></div>
-          <span className="text-gray-400">Deep Learning</span>
+          <span className="text-muted-foreground">Deep Learning</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-full bg-blue-500/50"></div>
-          <span className="text-gray-400">NLP</span>
+          <span className="text-muted-foreground">NLP</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-full bg-green-500/50"></div>
-          <span className="text-gray-400">Deployment</span>
+          <span className="text-muted-foreground">Deployment</span>
         </div>
       </div>
     </div>

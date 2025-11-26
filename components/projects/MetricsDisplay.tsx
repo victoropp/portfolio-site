@@ -64,7 +64,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ businessImpact }) => {
                   <Icon className={`h-6 w-6 ${metric.color}`} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">{metric.label}</p>
+                  <p className="text-sm text-muted-foreground">{metric.label}</p>
                   <p className={`text-2xl font-bold ${metric.color}`}>
                     {metric.value}
                   </p>
@@ -77,8 +77,8 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ businessImpact }) => {
 
       {/* Additional Metrics */}
       {businessImpact.other && businessImpact.other.length > 0 && (
-        <div className="rounded-xl border border-gray-700 bg-gray-900/50 p-6">
-          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+        <div className="rounded-xl border border-border bg-card/50 p-6">
+          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-foreground">
             <Zap className="h-5 w-5 text-yellow-400" />
             Key Performance Indicators
           </h3>
@@ -86,13 +86,13 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ businessImpact }) => {
             {businessImpact.other.map((metric, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between rounded-lg bg-gray-800/50 p-4"
+                className="flex items-center justify-between rounded-lg bg-card/50 p-4"
               >
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-400" />
-                  <span className="text-sm text-gray-300">{metric.label}</span>
+                  <CheckCircle className="h-4 w-4 text-accent" />
+                  <span className="text-sm text-muted-foreground">{metric.label}</span>
                 </div>
-                <span className="text-sm font-semibold text-cyan-400">
+                <span className="text-sm font-semibold text-primary">
                   {metric.value}
                 </span>
               </div>
@@ -102,41 +102,41 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ businessImpact }) => {
       )}
 
       {/* Business Impact Table */}
-      <div className="rounded-xl border border-gray-700 bg-gray-900/50 overflow-hidden">
-        <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 px-6 py-4">
-          <h3 className="text-lg font-semibold text-white">
+      <div className="rounded-xl border border-border bg-card/50 overflow-hidden">
+        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 px-6 py-4">
+          <h3 className="text-lg font-semibold text-foreground">
             Business Impact Summary
           </h3>
         </div>
         <div className="p-6">
           <table className="w-full">
-            <tbody className="divide-y divide-gray-800">
+            <tbody className="divide-y divide-border">
               <tr>
-                <td className="py-3 text-gray-400">Return on Investment</td>
-                <td className="py-3 text-right font-semibold text-green-400">
+                <td className="py-3 text-muted-foreground">Return on Investment</td>
+                <td className="py-3 text-right font-semibold text-accent">
                   {businessImpact.roi}
                 </td>
               </tr>
               {businessImpact.savings && (
                 <tr>
-                  <td className="py-3 text-gray-400">Cost Savings</td>
-                  <td className="py-3 text-right font-semibold text-cyan-400">
+                  <td className="py-3 text-muted-foreground">Cost Savings</td>
+                  <td className="py-3 text-right font-semibold text-primary">
                     {businessImpact.savings}
                   </td>
                 </tr>
               )}
               {businessImpact.accuracy && (
                 <tr>
-                  <td className="py-3 text-gray-400">Model Accuracy</td>
-                  <td className="py-3 text-right font-semibold text-purple-400">
+                  <td className="py-3 text-muted-foreground">Model Accuracy</td>
+                  <td className="py-3 text-right font-semibold text-secondary">
                     {businessImpact.accuracy}
                   </td>
                 </tr>
               )}
               {businessImpact.other?.map((metric, index) => (
                 <tr key={index}>
-                  <td className="py-3 text-gray-400">{metric.label}</td>
-                  <td className="py-3 text-right font-semibold text-gray-200">
+                  <td className="py-3 text-muted-foreground">{metric.label}</td>
+                  <td className="py-3 text-right font-semibold text-muted-foreground">
                     {metric.value}
                   </td>
                 </tr>

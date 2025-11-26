@@ -16,6 +16,11 @@ const ProjectsPage = () => {
     sort: 'newest',
   });
 
+  // Calculate unique domains count
+  const uniqueDomains = useMemo(() => {
+    return new Set(projects.map(p => p.domain)).size;
+  }, []);
+
   // Filter and sort projects
   const filteredProjects = useMemo(() => {
     let result = [...projects];
@@ -98,39 +103,39 @@ const ProjectsPage = () => {
   }, [filters]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <div className="min-h-screen bg-gradient-to-b from-background via-card/30 to-background">
       {/* Hero Section */}
-      <section className="border-b border-gray-800 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 py-16">
-        <div className="container mx-auto px-4">
+      <section className="border-b border-border bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 py-16">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
               Data Science{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-gradient">
                 Portfolio
               </span>
             </h1>
-            <p className="mx-auto max-w-3xl text-lg text-gray-300 md:text-xl">
+            <p className="mx-auto max-w-3xl text-lg text-muted-foreground md:text-xl">
               Explore production-grade machine learning projects with proven business
               impact. From fraud detection to medical imaging, each project demonstrates
               real-world value.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-              <div className="rounded-lg bg-gray-800/50 px-4 py-2">
-                <span className="text-cyan-400 font-semibold">{projects.length}</span>{' '}
-                <span className="text-gray-400">Projects</span>
+              <div className="rounded-lg bg-card/50 px-4 py-2">
+                <span className="text-primary font-semibold">{projects.length}</span>{' '}
+                <span className="text-muted-foreground">Production Projects</span>
               </div>
-              <div className="rounded-lg bg-gray-800/50 px-4 py-2">
-                <span className="text-green-400 font-semibold">$5M+</span>{' '}
-                <span className="text-gray-400">Business Impact</span>
+              <div className="rounded-lg bg-card/50 px-4 py-2">
+                <span className="text-accent font-semibold">{uniqueDomains}+</span>{' '}
+                <span className="text-muted-foreground">Industry Domains</span>
               </div>
-              <div className="rounded-lg bg-gray-800/50 px-4 py-2">
-                <span className="text-purple-400 font-semibold">98%</span>{' '}
-                <span className="text-gray-400">Avg Accuracy</span>
+              <div className="rounded-lg bg-card/50 px-4 py-2">
+                <span className="text-secondary font-semibold">End-to-End</span>{' '}
+                <span className="text-muted-foreground">ML Pipelines</span>
               </div>
             </div>
           </motion.div>
@@ -139,7 +144,7 @@ const ProjectsPage = () => {
 
       {/* Filters and Projects Grid */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
+        <div className="container-custom">
           {/* Filters */}
           <ProjectFilters
             filters={filters}
@@ -170,10 +175,10 @@ const ProjectsPage = () => {
                 className="flex flex-col items-center justify-center py-20"
               >
                 <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-bold text-white mb-2">
+                <h3 className="text-2xl font-bold text-foreground mb-2">
                   No projects found
                 </h3>
-                <p className="text-gray-400 mb-6">
+                <p className="text-muted-foreground mb-6">
                   Try adjusting your filters or search query
                 </p>
                 <button
@@ -186,7 +191,7 @@ const ProjectsPage = () => {
                       sort: 'newest',
                     })
                   }
-                  className="rounded-lg bg-cyan-500 px-6 py-2 text-white font-semibold hover:bg-cyan-600 transition-colors"
+                  className="rounded-lg bg-primary px-6 py-2 text-primary-foreground font-semibold hover:bg-primary/80 transition-colors"
                 >
                   Clear All Filters
                 </button>
