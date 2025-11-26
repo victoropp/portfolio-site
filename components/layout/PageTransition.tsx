@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence, type Variants } from "framer-motion"
 import { usePathname } from "next/navigation"
+import { useRef, useEffect, useState } from "react"
 
 interface PageTransitionProps {
   children: React.ReactNode
@@ -30,12 +31,22 @@ const variants: Variants = {
 
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname()
+  const [isFirstRender, setIsFirstRender] = useState(true)
+  const prevPathRef = useRef(pathname)
+
+  useEffect(() => {
+    // After first render, allow animations on subsequent navigations
+    if (isFirstRender) {
+      setIsFirstRender(false)
+    }
+    prevPathRef.current = pathname
+  }, [pathname, isFirstRender])
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial="hidden"
+        initial={isFirstRender ? false : "hidden"}
         animate="enter"
         exit="exit"
         variants={variants}
