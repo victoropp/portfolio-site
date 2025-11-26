@@ -23,14 +23,22 @@ export function ScrollReveal({
   const ref = React.useRef(null)
   const isInView = useInView(ref, { once, margin: "-100px" })
   const controls = useAnimation()
+  const [hasMounted, setHasMounted] = React.useState(false)
+
+  // Track if component has mounted (client-side)
+  React.useEffect(() => {
+    setHasMounted(true)
+  }, [])
 
   React.useEffect(() => {
-    if (isInView) {
-      controls.start("visible")
-    } else {
-      controls.start("hidden")
+    if (hasMounted) {
+      if (isInView) {
+        controls.start("visible")
+      } else if (!once) {
+        controls.start("hidden")
+      }
     }
-  }, [isInView, controls])
+  }, [isInView, controls, hasMounted, once])
 
   const directionOffset = {
     up: { y: 40, x: 0 },
@@ -59,8 +67,8 @@ export function ScrollReveal({
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={controls}
+      initial={hasMounted ? "hidden" : "visible"}
+      animate={hasMounted ? controls : "visible"}
       variants={variants}
       className={className}
     >
