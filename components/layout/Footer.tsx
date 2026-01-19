@@ -42,7 +42,7 @@ export function Footer() {
               Victor Collins Oppon
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Data Scientist & ML Engineer with Finance/Accounting expertise (FCCA, MBA Finance) building production ML systems with measurable business impact.
+              Data Scientist & ML Engineer with Finance/Accounting expertise (MSc Data Science, FCCA, MBA Finance) building production ML systems with measurable business impact.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => {

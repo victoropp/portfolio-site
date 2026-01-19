@@ -95,7 +95,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8"
         >
-          Data Scientist & ML Engineer with Finance/Accounting expertise (FCCA, MBA Finance) delivering{" "}
+          Data Scientist & ML Engineer with Finance/Accounting expertise (MSc Data Science, FCCA, MBA Finance) delivering{" "}
           <span className="text-primary font-semibold">End-to-End ML Solutions</span> across{" "}
           <span className="text-secondary font-semibold">Finance, Healthcare, Retail, Insurance, NLP, Computer Vision</span>, and{" "}
           <span className="text-accent font-semibold">more</span>

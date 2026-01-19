@@ -7,10 +7,11 @@ import { projects } from "@/lib/data/projects"
 
 export const metadata: Metadata = {
   title: "About | Victor Collins Oppon",
-  description: "Data Scientist & ML Engineer with 15+ years of analytical leadership, blending Finance/Accounting expertise (ACCA, MBA Finance) with advanced Machine Learning capabilities. Specialized in building end-to-end production ML systems.",
+  description: "Data Scientist & ML Engineer with 15+ years of analytical leadership, blending Finance/Accounting expertise (MSc Data Science, ACCA, MBA Finance) with advanced Machine Learning capabilities. Specialized in building end-to-end production ML systems.",
   keywords: [
     "data scientist",
     "machine learning engineer",
+    "MSc Data Science",
     "ACCA",
     "MBA Finance",
     "financial analytics",

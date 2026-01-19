@@ -19,10 +19,13 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Victor Collins Oppon | Data Scientist & ML Engineer",
-  description: "Building Production ML Systems with Measurable $M+ Business Impact. 10+ projects with $5M+ ROI across Financial AI, Healthcare ML, and Predictive Analytics.",
+  description: "Data Scientist & ML Engineer (MSc Data Science, FCCA, MBA Finance) building Production ML Systems with Measurable Business Impact. 17+ projects across Financial AI, Healthcare ML, and Predictive Analytics.",
   keywords: [
     "data scientist",
     "machine learning engineer",
+    "MSc Data Science",
+    "FCCA",
+    "MBA Finance",
     "financial AI",
     "healthcare ML",
     "production ML",
@@ -31,7 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Victor Collins Oppon" }],
   openGraph: {
     title: "Victor Collins Oppon | Data Scientist & ML Engineer",
-    description: "10+ Production ML Projects with $5M+ Business Impact",
+    description: "Data Scientist & ML Engineer (MSc Data Science, FCCA, MBA Finance) - 17+ Production ML Projects with Measurable Business Impact",
     type: "website",
   },
 }
