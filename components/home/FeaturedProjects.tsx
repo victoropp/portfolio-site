@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { getFeaturedProjects, projects } from "@/lib/data/projects";
+import Link from "next/link";
 
 export function FeaturedProjects() {
   const featuredProjects = getFeaturedProjects().slice(0, 4);
@@ -83,16 +84,24 @@ export function FeaturedProjects() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <Button size="sm" className="flex-1 group/btn">
-                      View Details
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    <Button asChild size="sm" className="flex-1 group/btn">
+                      <Link href={`/projects/${project.slug}`}>
+                        View Details
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Link>
                     </Button>
-                    <Button size="sm" variant="outline" className="aspect-square p-0">
-                      <Github className="h-4 w-4" />
-                    </Button>
+                    {project.githubUrl && (
+                      <Button asChild size="sm" variant="outline" className="aspect-square p-0">
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
                     {project.demoUrl && (
-                      <Button size="sm" variant="outline" className="aspect-square p-0">
-                        <ExternalLink className="h-4 w-4" />
+                      <Button asChild size="sm" variant="outline" className="aspect-square p-0">
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
                       </Button>
                     )}
                   </div>
@@ -105,9 +114,11 @@ export function FeaturedProjects() {
         {/* View All Projects Button */}
         <ScrollReveal delay={0.4}>
           <div className="text-center">
-            <Button size="lg" variant="outline" className="group">
-              View All {totalProjects}+ Projects
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <Button asChild size="lg" variant="outline" className="group">
+              <Link href="/projects">
+                View All {totalProjects}+ Projects
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
           </div>
         </ScrollReveal>
