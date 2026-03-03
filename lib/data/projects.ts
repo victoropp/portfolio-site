@@ -1107,6 +1107,128 @@ export const projects: Project[] = [
     featured: false,
     order: 17,
     date: '2024-11-24'
+  },
+
+  // ==================== MSc DISSERTATION ====================
+  {
+    id: '18',
+    slug: 'food-insecurity-early-warning',
+    title: 'Food Insecurity Early Warning System',
+    tagline: 'MSc Dissertation — Top 5 Best Project Award | Two-stage cascade ML rescuing 249 missed crises across 18 African nations using GDELT news signals',
+
+    domain: 'humanitarian',
+    industry: ['humanitarian-aid', 'international-development', 'public-policy', 'food-security', 'global-health'],
+
+    keyMetric: {
+      label: 'Crises Rescued',
+      value: '249',
+      context: 'missed by baseline model'
+    },
+
+    businessImpact: {
+      roi: '17.4% rescue rate',
+      accuracy: '90.7% AUC (AR Baseline)',
+      other: [
+        { label: 'Countries Covered', value: '18 African nations' },
+        { label: 'Districts Analysed', value: '1,920 unique districts' },
+        { label: 'Observations', value: '20,722 district-periods' },
+        { label: 'Award', value: 'Top 5 Best Project — MSc Data Science' }
+      ]
+    },
+
+    techStack: ['XGBoost', 'SHAP', 'scikit-learn', 'Hidden Markov Models', 'Dynamic Mode Decomposition', 'geopandas', 'statsmodels', 'Python', 'Jupyter'],
+    modelType: 'Two-Stage Cascade Classification',
+
+    overview: 'MSc Dissertation achieving Distinction and Top 5 Best Project Award at Middlesex University London. Developed a two-stage cascade early warning framework for food crises across 18 Sub-Saharan African countries. Combines an autoregressive (AR) logistic regression baseline with an XGBoost news-signal model to rescue 249 crises missed by the AR model — particularly in conflict-affected regions like Zimbabwe, Sudan, and DR Congo.',
+
+    challenge: '20,722 district-period observations with 25.7% crisis rate across 18 African nations (2021–2024). The core challenge: most food insecurity is structurally persistent, so purely news-driven models risk learning autocorrelation rather than genuine early-warning signals. Needed to separate structural persistence from shock-driven crises where news signals genuinely matter.',
+
+    solution: 'Two-stage cascade framework: Stage 1 uses L2-regularised logistic regression on IPC temporal lags and spatial AR features (AUC 0.907 with just two features). Stage 2 applies XGBoost with 35 engineered features — GDELT thematic ratios, 12-month z-score anomalies, HMM regime transitions, and DMD dynamic modes — only on cases where Stage 1 fails. Binary override logic: trust AR when it predicts crisis, else apply Stage 2. Validated with 5-fold stratified spatial CV to prevent geographic data leakage.',
+
+    results: 'AR baseline: AUC 0.907, 73.2% precision/recall, F1 0.732. Cascade rescued 249 crises (17.4% rescue rate) missed by the AR model, concentrated in conflict zones: Zimbabwe (77), Sudan (59), DR Congo (40). HMM transition_risk emerged as top feature; DMD modes captured crisis growth dynamics invisible to standard features. Ablation showed ratio + location features (AUC 0.727) outperform complex engineering. Dissertation awarded Distinction and Top 5 Best MSc Project at Middlesex University London.',
+
+    thumbnail: '/projects/food-insecurity/thumbnail.webp',
+    images: [
+      '/projects/food-insecurity/demo-1.webp',
+      '/projects/food-insecurity/cascade-framework.png',
+      '/projects/food-insecurity/geographic-results.png',
+      '/projects/food-insecurity/shap-features.png'
+    ],
+
+    githubUrl: 'https://github.com/victoropp/food-insecurity-early-warning',
+
+    seo: {
+      metaTitle: 'Food Insecurity Early Warning System — MSc Dissertation | Victor Oppon',
+      metaDescription: 'Award-winning MSc dissertation: two-stage cascade ML framework for food crisis early warning across 18 African nations. 249 crises rescued using GDELT news signals, HMM regimes, and XGBoost.',
+      keywords: [
+        'food insecurity early warning',
+        'humanitarian AI',
+        'food crisis prediction',
+        'Sub-Saharan Africa',
+        'GDELT news signals',
+        'XGBoost cascade model',
+        'IPC food security',
+        'FEWSNET',
+        'Hidden Markov Models',
+        'Dynamic Mode Decomposition',
+        'MSc dissertation distinction',
+        'Middlesex University'
+      ]
+    },
+
+    dataset: {
+      name: 'IPC Assessments (FEWSNET) + GDELT News Events',
+      size: '20,722 district-period observations',
+      features: '35 engineered features (AR lags, GDELT thematic ratios, HMM transitions, DMD modes)',
+      source: 'https://fews.net/fews-data/335 | https://www.gdeltproject.org/'
+    },
+
+    approach: {
+      preprocessing: [
+        'Merged IPC district-level assessments (18 countries, 2021–2024) with GDELT news event counts',
+        'Computed 8-category GDELT thematic ratios per district-month',
+        '12-month rolling z-score anomaly detection for news volume spikes',
+        'Trained 2-state HMM per district to extract regime transition probabilities',
+        'Dynamic Mode Decomposition (DMD) to isolate crisis growth modes',
+        'Spatial join using GADM 4.1 + IPC administrative boundaries'
+      ],
+      modeling: [
+        'Stage 1: L2-regularised logistic regression on IPC_{t-1} lag and spatial AR features',
+        'Stage 2: XGBoost with 35 features applied only to AR failures/uncertain cases',
+        'Binary override: if AR predicts crisis (1), retain; else use Stage 2 prediction',
+        '5-fold stratified spatial cross-validation (no geographic data leakage)'
+      ],
+      evaluation: [
+        'AUC-ROC, Precision, Recall, F1 across both stages',
+        'Ablation study: 6 feature groups tested independently',
+        'Geographic breakdown of cascade rescue rate by country',
+        'SHAP feature importance for XGBoost Stage 2 model'
+      ]
+    },
+
+    keyLearnings: {
+      whatWorked: [
+        'AR baseline alone achieves near-excellent AUC (0.907) — structural persistence dominates food insecurity',
+        'Cascade architecture maximises recall for shock-driven crises without sacrificing precision on persistent cases',
+        'HMM transition_risk captures narrative shifts that precede crisis escalation',
+        'Spatial cross-validation was critical — naive CV inflates performance by ~15%'
+      ],
+      whatDidnt: [
+        'Complex news feature engineering (DMD + HMM + ratios combined) did not outperform simpler ratio + location baseline',
+        'Country-level models reduced geographic overfitting but increased variance on smaller nations',
+        'GDELT coverage gaps in certain regions created sparse signals for low-media-exposure districts'
+      ],
+      improvements: [
+        'Incorporate real-time GDELT API for live crisis monitoring dashboard',
+        'Extend to additional climate/conflict data sources (ACLED, CHIRPS rainfall)',
+        'Deploy ensemble of Stage 2 models with uncertainty quantification for decision-makers',
+        'Fine-tune HMM states per region type (conflict vs drought-prone zones)'
+      ]
+    },
+
+    featured: true,
+    order: 5,
+    date: '2024-09-01'
   }
 ];
 

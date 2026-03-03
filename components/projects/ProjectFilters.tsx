@@ -29,6 +29,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
     { value: 'hr', label: 'HR Analytics' },
     { value: 'forecasting', label: 'Forecasting' },
     { value: 'analytics', label: 'Analytics' },
+    { value: 'humanitarian', label: 'Humanitarian AI' },
   ];
 
   const techOptions = [

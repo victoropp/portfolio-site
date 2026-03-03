@@ -15,7 +15,7 @@ export interface Project {
   tagline: string;
 
   // Categorization
-  domain: 'finance' | 'healthcare' | 'retail' | 'nlp' | 'cv' | 'hr' | 'forecasting' | 'analytics';
+  domain: 'finance' | 'healthcare' | 'retail' | 'nlp' | 'cv' | 'hr' | 'forecasting' | 'analytics' | 'humanitarian';
   industry: string[];
 
   // Metrics

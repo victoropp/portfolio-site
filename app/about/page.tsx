@@ -7,7 +7,7 @@ import { projects } from "@/lib/data/projects"
 
 export const metadata: Metadata = {
   title: "About | Victor Collins Oppon",
-  description: "Data Scientist & ML Engineer with 15+ years of analytical leadership, blending Finance/Accounting expertise (MSc Data Science, ACCA, MBA Finance) with advanced Machine Learning capabilities. Specialized in building end-to-end production ML systems.",
+  description: "Data Scientist & ML Engineer with 15+ years of analytical leadership, blending Finance/Accounting expertise (MSc Data Science with Distinction, ACCA, MBA Finance) with advanced Machine Learning capabilities. Specialized in building end-to-end production ML systems.",
   keywords: [
     "data scientist",
     "machine learning engineer",
@@ -42,7 +42,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap justify-center gap-3">
               <Badge variant="default">ACCA Fellow</Badge>
               <Badge variant="secondary">MBA Finance</Badge>
-              <Badge variant="accent">MSc Data Science (2026)</Badge>
+              <Badge variant="accent">MSc Data Science — Distinction</Badge>
               <Badge variant="outline">BSc Accounting (First Class)</Badge>
             </div>
           </div>
@@ -97,19 +97,25 @@ export default function AboutPage() {
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {/* Degree Cards */}
-              <Card className="p-6 glass glass-hover">
+              <Card className="p-6 glass glass-hover border-accent/30">
                 <div className="flex items-start gap-4">
-                  <Badge variant="accent" className="mt-1">In Progress</Badge>
+                  <Badge variant="accent" className="mt-1">Distinction</Badge>
                   <div>
                     <h3 className="text-lg font-bold text-foreground mb-1">
                       MSc Data Science
                     </h3>
                     <p className="text-sm text-muted-foreground mb-2">
-                      Middlesex University, London
+                      Middlesex University London
                     </p>
-                    <p className="text-xs text-muted">Expected: January 2026</p>
+                    <p className="text-xs text-muted mb-2">Graduated with Distinction · 2025</p>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      <Badge variant="secondary" className="text-xs">🏆 Top 5 Best Project Award</Badge>
+                    </div>
                     <p className="text-xs text-muted-foreground mt-1">
                       Machine Learning, Big Data Analytics, NLP, Cloud Systems, AI Ethics
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      <span className="text-accent font-medium">Dissertation:</span> Food Insecurity Early Warning System — Two-stage cascade ML across 18 African nations
                     </p>
                   </div>
                 </div>
