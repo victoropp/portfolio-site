@@ -392,7 +392,7 @@ export default function AboutPage() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span><strong>Anthropic API</strong> — agentic patterns, tool use, function calling</span>
+                    <span><strong>LLM APIs</strong> — agentic patterns, tool use, function calling</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>

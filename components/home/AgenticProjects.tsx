@@ -10,7 +10,7 @@ const agenticProjects = [
     title: "Agentic Accounting & Bookkeeping ERP",
     description:
       "Full-stack ERP with AI agents handling invoicing, ledger entries, bank reconciliation, and month-end reporting. Agents reason through each step, catch anomalies, and flag issues autonomously. Used by finance teams in production.",
-    techStack: ["Anthropic API", "Agentic Patterns", "Tool Use", "Python", "React"],
+    techStack: ["LLM API", "Agentic Patterns", "Tool Use", "Python", "React"],
     emoji: "🧾",
   },
   {
@@ -18,7 +18,7 @@ const agenticProjects = [
     title: "AI-Powered Personalised Learning Tutor",
     description:
       "An adaptive AI tutor that adjusts content, pacing, and difficulty to each learner in real time. Assesses understanding through conversation rather than rigid quizzes. Built to explore how agentic patterns translate to edtech.",
-    techStack: ["Anthropic API", "Multi-Agent", "NLP", "React"],
+    techStack: ["LLM API", "Multi-Agent", "NLP", "React"],
     emoji: "📚",
   },
   {
@@ -26,7 +26,7 @@ const agenticProjects = [
     title: "Wellness Tracking & AI Coaching App",
     description:
       "Wellness tracker with an agentic coaching layer providing personalised health guidance. The design challenge was getting the AI tone right in sensitive contexts where empathy matters as much as accuracy.",
-    techStack: ["Anthropic API", "Agentic Patterns", "Python"],
+    techStack: ["LLM API", "Agentic Patterns", "Python"],
     emoji: "🏃",
   },
   {
@@ -34,7 +34,7 @@ const agenticProjects = [
     title: "Multi-Agent Workflow Automation Tool",
     description:
       "Specialised agents collaborating on complex workflows — extraction, validation, transformation, and output generation. The real engineering was in reliable handoffs, error recovery, and quality assurance between agents.",
-    techStack: ["Anthropic API", "Multi-Agent Systems", "Function Calling", "Tool Use"],
+    techStack: ["LLM API", "Multi-Agent Systems", "Function Calling", "Tool Use"],
     emoji: "⚙️",
   },
   {
@@ -42,7 +42,7 @@ const agenticProjects = [
     title: "Client-Facing Analytics Dashboard",
     description:
       "Interactive dashboard where users ask questions in plain English and get real answers from live business data. End-to-end build: frontend, API layer, data pipeline, AI integration, and deployment.",
-    techStack: ["Anthropic API", "React", "Data Visualisation", "NL Querying"],
+    techStack: ["LLM API", "React", "Data Visualisation", "NL Querying"],
     emoji: "📊",
   },
 ];
@@ -58,8 +58,7 @@ export function AgenticProjects() {
               Built with <span className="text-gradient">Agentic AI</span>
             </h2>
             <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-              End-to-end AI applications built using agentic patterns and the Anthropic API — from
-              concept to production deployment.
+              End-to-end AI applications built using agentic patterns — from concept to production deployment.
             </p>
           </div>
         </ScrollReveal>
