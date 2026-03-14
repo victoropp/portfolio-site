@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { ImpactMetrics } from "@/components/home/ImpactMetrics";
+import { AgenticProjects } from "@/components/home/AgenticProjects";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { SkillsOverview } from "@/components/home/SkillsOverview";
 import { CTA } from "@/components/home/CTA";
@@ -9,6 +10,7 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <Hero />
       <ImpactMetrics />
+      <AgenticProjects />
       <FeaturedProjects />
       <SkillsOverview />
       <CTA />

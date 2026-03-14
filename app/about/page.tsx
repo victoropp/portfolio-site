@@ -7,13 +7,15 @@ import { projects } from "@/lib/data/projects"
 
 export const metadata: Metadata = {
   title: "About | Victor Collins Oppon",
-  description: "Data Scientist & ML Engineer with 15+ years of analytical leadership, blending Finance/Accounting expertise (MSc Data Science with Distinction, ACCA, MBA Finance) with advanced Machine Learning capabilities. Specialized in building end-to-end production ML systems.",
+  description: "Data Scientist & ML Engineer building production AI applications using agentic AI. Finance background (FCCA, MSc Data Science with Distinction). Shipping agentic apps across finance, education, and wellness alongside 18+ ML projects.",
   keywords: [
     "data scientist",
     "machine learning engineer",
     "MSc Data Science",
+    "FCCA",
     "ACCA",
     "MBA Finance",
+    "agentic AI",
     "financial analytics",
     "production ML",
     "business intelligence",
@@ -35,9 +37,8 @@ export default function AboutPage() {
               About <span className="text-gradient">Me</span>
             </h1>
             <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              I&apos;m a <span className="text-primary font-semibold">Data Scientist & ML Engineer</span> with{" "}
-              <span className="text-accent font-semibold">15+ years of analytical leadership</span>,
-              uniquely positioned at the intersection of advanced machine learning and financial expertise.
+              I&apos;m a <span className="text-primary font-semibold">Data Scientist & ML Engineer</span> who builds{" "}
+              <span className="text-accent font-semibold">production AI applications</span> using agentic AI. My background is in finance (FCCA) and data science (MSc with Distinction), which means I understand what it takes to turn a messy real-world problem into a working product.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Badge variant="default">ACCA Fellow</Badge>
@@ -60,18 +61,17 @@ export default function AboutPage() {
                   Professional Summary
                 </h2>
                 <p className="text-body text-muted-foreground mb-4">
-                  With a rare combination of <strong className="text-foreground">Chartered Accountancy (FCCA)</strong> and{" "}
-                  <strong className="text-foreground">Advanced Machine Learning expertise</strong>, I architect production-grade ML systems that
-                  deliver measurable, transformative business impact. My <strong className="text-foreground">15+ years</strong> leading financial analytics
-                  and enterprise intelligence initiatives uniquely position me to bridge the gap between cutting-edge AI and real-world business value.
+                  I build production AI applications using agentic AI. My background is in{" "}
+                  <strong className="text-foreground">finance (FCCA)</strong> and{" "}
+                  <strong className="text-foreground">data science (MSc with Distinction)</strong>, which means I understand what it
+                  takes to turn a messy real-world problem into a working product.
                 </p>
                 <p className="text-body text-muted-foreground mb-4">
-                  I specialize in transforming complex business challenges into scalable, production-ready ML solutions across{" "}
-                  <span className="text-primary font-semibold">Finance & Risk Analytics</span>,{" "}
-                  <span className="text-secondary font-semibold">Healthcare AI</span>,{" "}
-                  <span className="text-accent font-semibold">Retail Intelligence</span>, and{" "}
-                  <span className="text-foreground font-semibold">Enterprise Automation</span> — delivering end-to-end ML pipelines
-                  from strategic concept to deployed, monitored production systems.
+                  Over the past several months, I&apos;ve shipped agentic apps across{" "}
+                  <span className="text-primary font-semibold">finance</span>,{" "}
+                  <span className="text-secondary font-semibold">education</span>, and{" "}
+                  <span className="text-accent font-semibold">wellness</span> — alongside {projects.length}+ ML projects spanning
+                  fraud detection, medical imaging, NLP, and more.
                 </p>
                 <p className="text-body text-muted-foreground">
                   <strong className="text-foreground">Proven Track Record:</strong> {projects.length}+ production ML projects deployed,
@@ -205,7 +205,7 @@ export default function AboutPage() {
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="text-lg font-bold text-foreground">
-                          Senior Finance Manager (Advanced Analytics & Automation)
+                          Finance Manager (Analytics & Automation)
                         </h3>
                         <p className="text-sm text-muted-foreground">SIA QSR Ltd</p>
                       </div>
@@ -387,6 +387,28 @@ export default function AboutPage() {
                 </ul>
               </Card>
 
+              <Card className="p-6 glass glass-hover border-primary/20">
+                <h3 className="text-lg font-bold text-primary mb-4">AI & LLM Development</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>Anthropic API</strong> — agentic patterns, tool use, function calling</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>Multi-Agent Systems</strong> — orchestration, handoffs, error recovery</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>Production LLM Apps</strong> — deployed across finance, education, wellness</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>Agentic Developer Platform</strong> — API provisioning and integration</span>
+                  </li>
+                </ul>
+              </Card>
+
               <Card className="p-6 glass glass-hover">
                 <h3 className="text-lg font-bold text-foreground mb-4">Domain Expertise</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -425,11 +447,10 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-body text-muted-foreground">
                   <p>
-                    <strong className="text-foreground">Rare Dual Expertise:</strong> A unique combination of{" "}
-                    <strong className="text-primary">FCCA Chartered Accountancy</strong>,{" "}
-                    <strong className="text-secondary">15+ years business leadership</strong>, and{" "}
-                    <strong className="text-accent">cutting-edge ML/AI capabilities</strong>. I don&apos;t just build models —
-                    I understand the business context, ROI implications, and strategic value that makes them impactful.
+                    <strong className="text-foreground">Builder-Practitioner:</strong> I don&apos;t just build ML models — I ship full{" "}
+                    <strong className="text-primary">AI-powered applications</strong> using agentic AI. From agentic ERPs to AI tutors,
+                    I&apos;ve gone from concept to production across multiple domains, combining deep{" "}
+                    <strong className="text-accent">finance expertise (FCCA)</strong> with hands-on AI development.
                   </p>
                   <p>
                     <strong className="text-foreground">Full-Stack ML Expertise:</strong> From{" "}

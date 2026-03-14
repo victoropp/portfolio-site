@@ -24,8 +24,7 @@ export function CTA() {
 
             {/* Subheadline */}
             <p className="text-body-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Open to senior data science roles, ML engineering positions, and consulting
-              opportunities. Let&apos;s discuss how production ML can drive business value.
+              Open to applied AI roles, developer relations, data science, and consulting. Let&apos;s discuss how agentic AI and production ML can drive business value.
             </p>
 
             {/* CTA Buttons */}

@@ -89,7 +89,7 @@ export function Footer() {
               Get In Touch
             </h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Open to senior data science roles, ML engineering positions, and consulting opportunities.
+              Open to AI developer relations, applied AI, data science, and consulting opportunities.
             </p>
             <a
               href="/contact"
