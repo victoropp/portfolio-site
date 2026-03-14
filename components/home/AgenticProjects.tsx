@@ -3,15 +3,22 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { Receipt, BookOpen, Heart, Zap, BarChart2, type LucideIcon } from "lucide-react";
 
-const agenticProjects = [
+const agenticProjects: {
+  tag: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  Icon: LucideIcon;
+}[] = [
   {
     tag: "FINANCE | AGENTIC AI",
     title: "Agentic Accounting & Bookkeeping ERP",
     description:
       "Full-stack ERP with AI agents handling invoicing, ledger entries, bank reconciliation, and month-end reporting. Agents reason through each step, catch anomalies, and flag issues autonomously. Used by finance teams in production.",
     techStack: ["LLM API", "Agentic Patterns", "Tool Use", "Python", "React"],
-    emoji: "🧾",
+    Icon: Receipt,
   },
   {
     tag: "EDUCATION | AGENTIC AI",
@@ -19,7 +26,7 @@ const agenticProjects = [
     description:
       "An adaptive AI tutor that adjusts content, pacing, and difficulty to each learner in real time. Assesses understanding through conversation rather than rigid quizzes. Built to explore how agentic patterns translate to edtech.",
     techStack: ["LLM API", "Multi-Agent", "NLP", "React"],
-    emoji: "📚",
+    Icon: BookOpen,
   },
   {
     tag: "HEALTH | AGENTIC AI",
@@ -27,7 +34,7 @@ const agenticProjects = [
     description:
       "Wellness tracker with an agentic coaching layer providing personalised health guidance. The design challenge was getting the AI tone right in sensitive contexts where empathy matters as much as accuracy.",
     techStack: ["LLM API", "Agentic Patterns", "Python"],
-    emoji: "🏃",
+    Icon: Heart,
   },
   {
     tag: "AUTOMATION | AGENTIC AI",
@@ -35,7 +42,7 @@ const agenticProjects = [
     description:
       "Specialised agents collaborating on complex workflows — extraction, validation, transformation, and output generation. The real engineering was in reliable handoffs, error recovery, and quality assurance between agents.",
     techStack: ["LLM API", "Multi-Agent Systems", "Function Calling", "Tool Use"],
-    emoji: "⚙️",
+    Icon: Zap,
   },
   {
     tag: "ANALYTICS | AGENTIC AI",
@@ -43,7 +50,7 @@ const agenticProjects = [
     description:
       "Interactive dashboard where users ask questions in plain English and get real answers from live business data. End-to-end build: frontend, API layer, data pipeline, AI integration, and deployment.",
     techStack: ["LLM API", "React", "Data Visualisation", "NL Querying"],
-    emoji: "📊",
+    Icon: BarChart2,
   },
 ];
 
@@ -70,7 +77,7 @@ export function AgenticProjects() {
               <Card className="glass glass-hover border-border/50 h-full flex flex-col group">
                 <CardHeader>
                   <div className="w-full h-32 bg-gradient-mesh rounded-xl mb-4 flex items-center justify-center border border-border/50">
-                    <span className="text-5xl opacity-30">{project.emoji}</span>
+                    <project.Icon className="h-12 w-12 text-primary/30" />
                   </div>
                   <Badge variant="outline" className="w-fit text-xs mb-2">
                     {project.tag}
