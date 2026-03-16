@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { Linkedin, Mail, Download, ArrowRight } from "lucide-react";
+import { Linkedin, Mail, ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
@@ -55,23 +55,6 @@ export function CTA() {
                 </a>
               </Button>
 
-              {/* Tertiary CTA - Resume */}
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto"
-              >
-                <a
-                  href="/resume.pdf"
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Resume
-                </a>
-              </Button>
             </div>
 
             {/* Additional Contact Info */}

@@ -3,7 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { projects } from "@/lib/data/projects";
 import { useHydrated } from "@/lib/hooks/useHydrated";
 
@@ -131,12 +131,6 @@ export function Hero() {
               View Projects
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <a href="/resume.pdf" download target="_blank" rel="noopener noreferrer">
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume
-            </a>
           </Button>
         </motion.div>
 

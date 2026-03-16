@@ -68,16 +68,6 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button asChild size="sm">
-              <a
-                href="/resume.pdf"
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download Resume
-              </a>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,16 +98,6 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="w-full">
-                <a
-                  href="/resume.pdf"
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download Resume
-                </a>
-              </Button>
             </div>
           </div>
         )}
