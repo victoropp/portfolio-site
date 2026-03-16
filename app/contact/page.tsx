@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ScrollReveal } from "@/components/animations/ScrollReveal"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Linkedin, Mail, Github, Download } from "lucide-react"
+import { Linkedin, Mail, Github } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact | Victor Collins Oppon",
@@ -95,25 +95,6 @@ export default function ContactPage() {
               </div>
             </Card>
 
-            {/* Resume Download */}
-            <Card className="p-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-accent">
-                    <Download className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground">Resume</h3>
-                    <p className="text-sm text-muted">Download my CV</p>
-                  </div>
-                </div>
-                <Button asChild variant="outline">
-                  <a href="/resume.pdf" download target="_blank" rel="noopener noreferrer">
-                    Download
-                  </a>
-                </Button>
-              </div>
-            </Card>
           </div>
         </ScrollReveal>
 
