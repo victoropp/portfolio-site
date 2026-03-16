@@ -37,6 +37,7 @@ const config: Config = {
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         heading: ['Space Grotesk', 'sans-serif'],
+        display: ['Instrument Serif', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'Courier New', 'monospace'],
       },
       fontSize: {
@@ -50,6 +51,9 @@ const config: Config = {
         '4xl': '2.25rem',   // 36px - H1 mobile
         '5xl': '3rem',      // 48px - H1 desktop
         '6xl': '3.75rem',   // 60px - Hero
+        '7xl': '4.5rem',    // 72px - Metric numbers
+        '8xl': '6rem',      // 96px - Hero name lines
+        '9xl': '8rem',      // 128px - Hero name lines max
       },
       spacing: {
         '18': '4.5rem',     // 72px

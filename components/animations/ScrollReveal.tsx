@@ -72,10 +72,10 @@ export function ScrollReveal({
   }, [mounted, wasInitiallyInView, hasAnimated, once])
 
   const directionOffset = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
+    up: { y: 12, x: 0 },
+    down: { y: -12, x: 0 },
+    left: { y: 0, x: 12 },
+    right: { y: 0, x: -12 },
   }
 
   const variants: Variants = {

@@ -20,12 +20,12 @@
     --accent: 158 64% 52%; /* #10B981 - Green */
     --accent-foreground: 210 50% 8%;
 
-    /* Card backgrounds with glassmorphism */
+    /* Card backgrounds */
     --card: 220 39% 16%; /* #1A1F3A */
     --card-foreground: 210 20% 98%;
 
     /* Borders */
-    --border: 217 19% 24%; /* #2D3548 */
+    --border: 217 19% 20%;
     --input: 217 19% 24%;
     --ring: 190 100% 50%;
 
@@ -41,8 +41,8 @@
     --popover: 220 39% 16%;
     --popover-foreground: 210 20% 98%;
 
-    /* Radius */
-    --radius: 1rem; /* 16px */
+    /* Radius — sharp editorial feel */
+    --radius: 0.25rem;
   }
 
   body {
@@ -52,70 +52,63 @@
 }
 
 @layer components {
-  /* Glassmorphism Effect */
+  /* Glassmorphism Effect — flattened, no blur */
   .glass {
-    background: rgba(26, 31, 58, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(45, 53, 72, 0.5);
+    background: rgba(15, 18, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .glass-hover {
-    transition: all 300ms ease;
+    transition: border-color 250ms ease;
   }
 
   .glass-hover:hover {
-    background: rgba(26, 31, 58, 0.8);
-    border-color: rgba(0, 217, 255, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 217, 255, 0.15);
-    transform: translateY(-4px);
+    background: rgba(15, 18, 40, 0.6);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+    transform: none;
   }
 
-  /* Glow Effects */
-  .glow-primary {
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3),
-                0 0 40px rgba(0, 217, 255, 0.15);
+  /* Editorial horizontal rule — short accent line */
+  .rule-editorial {
+    width: 3rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    display: block;
   }
 
-  .glow-accent {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3),
-                0 0 40px rgba(16, 185, 129, 0.15);
+  /* Thin full-width divider */
+  .rule-full {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    display: block;
   }
 
-  .glow-secondary {
-    box-shadow: 0 0 20px rgba(123, 104, 238, 0.3),
-                0 0 40px rgba(123, 104, 238, 0.15);
+  /* Section counter prefix — 01, 02, 03 style */
+  .section-index {
+    font-family: var(--font-space-grotesk);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
   }
 
-  /* Gradient Backgrounds */
-  .gradient-primary {
-    background: linear-gradient(135deg,
-      rgba(0, 217, 255, 0.1) 0%,
-      rgba(123, 104, 238, 0.1) 100%);
+  /* Flat editorial card — replaces glass on project cards */
+  .card-editorial {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: border-color 250ms ease;
   }
 
-  .gradient-mesh {
-    background-color: hsl(var(--background));
-    background-image:
-      radial-gradient(at 0% 0%, rgba(0, 217, 255, 0.1) 0, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(123, 104, 238, 0.1) 0, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(0, 217, 255, 0.05) 0, transparent 50%);
-  }
-
-  /* Hover Lift Effect */
-  .hover-lift {
-    transition: transform 300ms ease, box-shadow 300ms ease;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(0, 217, 255, 0.2);
+  .card-editorial:hover {
+    border-color: rgba(255, 255, 255, 0.16);
   }
 
   /* Typography Utilities */
   .text-gradient {
-    background: linear-gradient(135deg, #00D9FF 0%, #7B68EE 100%);
+    background: linear-gradient(135deg, #E2E8F0 0%, #94A3B8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -142,36 +135,9 @@
     line-height: 1.25rem;
   }
 
-  /* Animations */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
-    }
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-
   /* Scrollbar Styling */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -179,16 +145,17 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/50;
+    background: rgba(255, 255, 255, 0.2);
   }
 
   /* Selection */
   ::selection {
-    @apply bg-primary/30 text-foreground;
+    @apply bg-primary/20 text-foreground;
   }
 }
 
@@ -209,7 +176,7 @@
 
   /* Responsive Typography */
   .text-display {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
   }
 
   .text-heading {
@@ -222,6 +189,43 @@
 
   .text-body-lg {
     @apply text-lg md:text-xl;
+  }
+
+  /* Hero name display — large editorial serif lines */
+  .text-display-xl {
+    @apply text-7xl md:text-8xl lg:text-9xl font-normal tracking-tighter;
+    line-height: 0.88;
+  }
+
+  /* Oversized metric numbers */
+  .text-metric-xl {
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none;
+    font-family: var(--font-space-grotesk);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Tabular numerics */
+  .num-tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Subtle grain texture overlay — adds depth without color */
+  .bg-grain {
+    position: relative;
+  }
+
+  .bg-grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px 128px;
   }
 
   .gradient-bg {
@@ -237,15 +241,5 @@
 
   .gradient-text {
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20;
-  }
-
-  .glow {
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3),
-                0 0 40px rgba(0, 217, 255, 0.2),
-                0 0 60px rgba(0, 217, 255, 0.1);
   }
 }

@@ -4,7 +4,6 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils/cn"
-import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 const navigation = [
@@ -23,12 +22,10 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Close mobile menu when route changes
   React.useEffect(() => {
     setIsMenuOpen(false)
   }, [pathname])
@@ -36,9 +33,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-400",
         isScrolled
-          ? "glass shadow-lg backdrop-blur-glass"
+          ? "bg-background/90 border-b border-white/5"
           : "bg-transparent"
       )}
     >
@@ -47,22 +44,23 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl md:text-2xl font-bold text-gradient hover:opacity-80 transition-opacity"
+            className="text-sm font-medium tracking-[0.1em] uppercase text-foreground/70 hover:text-foreground transition-colors duration-200"
+            style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             Victor Collins Oppon
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-all duration-200 hover:text-primary",
+                  "text-xs font-medium tracking-[0.1em] uppercase transition-colors duration-200",
                   pathname === item.href
-                    ? "text-primary"
-                    : "text-foreground"
+                    ? "text-foreground"
+                    : "text-foreground/40 hover:text-foreground/80"
                 )}
               >
                 {item.name}
@@ -72,27 +70,27 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-foreground/50 hover:text-foreground transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden glass rounded-2xl mt-2 p-4 border border-border">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden bg-background border-t border-white/5 py-4">
+            <div className="flex flex-col gap-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium py-2 px-4 rounded-lg transition-all duration-200",
+                    "text-xs font-medium tracking-[0.1em] uppercase py-3 px-2 transition-colors duration-200",
                     pathname === item.href
-                      ? "bg-primary/20 text-primary"
-                      : "text-foreground/90 hover:bg-muted/20 hover:text-primary"
+                      ? "text-foreground"
+                      : "text-foreground/40 hover:text-foreground/80"
                   )}
                 >
                   {item.name}

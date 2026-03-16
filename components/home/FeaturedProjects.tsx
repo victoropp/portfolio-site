@@ -1,10 +1,7 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getFeaturedProjects, projects } from "@/lib/data/projects";
 import Link from "next/link";
 
@@ -13,113 +10,78 @@ export function FeaturedProjects() {
   const totalProjects = projects.length;
 
   return (
-    <section className="py-20 md:py-32 bg-card/30 relative">
+    <section className="py-20 md:py-32 border-t border-white/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-heading mb-4" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-              Featured <span className="text-gradient">Projects</span>
-            </h2>
-            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-              Production ML systems with proven business impact across finance, healthcare,
-              and retail
-            </p>
+          <div className="mb-12 flex items-end justify-between border-b border-white/5 pb-6">
+            <div>
+              <span className="section-index block mb-3">03 — Work</span>
+              <h2
+                className="text-4xl md:text-5xl font-bold tracking-tight text-foreground"
+                style={{ fontFamily: "var(--font-space-grotesk)" }}
+              >
+                Featured Projects
+              </h2>
+            </div>
+            <Link
+              href="/projects"
+              className="hidden sm:flex items-center gap-2 text-xs text-foreground/40 hover:text-foreground/70 transition-colors duration-200 tracking-[0.08em] uppercase"
+            >
+              View all {totalProjects}+
+              <ArrowRight className="h-3 w-3" />
+            </Link>
           </div>
         </ScrollReveal>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+        {/* Numbered project list */}
+        <div>
           {featuredProjects.map((project, index) => (
-            <ScrollReveal key={project.id} delay={index * 0.1}>
-              <Card className="glass glass-hover border-border/50 h-full flex flex-col group">
-                <CardHeader>
-                  {/* Thumbnail Placeholder */}
-                  <div className="w-full h-48 bg-gradient-mesh rounded-xl mb-6 flex items-center justify-center border border-border/50 overflow-hidden">
-                    <div className="text-center p-6">
-                      <div className="text-6xl mb-2 opacity-20">
-                        {project.domain === "finance" && "💳"}
-                        {project.domain === "healthcare" && "🏥"}
-                        {project.domain === "retail" && "🛍️"}
-                        {project.domain === "nlp" && "💬"}
-                      </div>
-                      <p className="text-xs text-muted">
-                        {project.domain.toUpperCase()}
-                      </p>
-                    </div>
-                  </div>
+            <ScrollReveal key={project.id} delay={index * 0.06}>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="group flex items-baseline gap-4 md:gap-8 py-7 border-b border-white/5 hover:border-white/12 transition-colors duration-250"
+              >
+                {/* Number */}
+                <span className="section-index w-6 flex-shrink-0">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-                  {/* Title */}
-                  <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
+                {/* Title */}
+                <span
+                  className="flex-1 text-lg md:text-xl font-medium text-foreground group-hover:text-foreground/80 transition-colors duration-200"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                >
+                  {project.title}
+                </span>
 
-                  {/* Key Metric Badge */}
-                  <div className="mb-4">
-                    <Badge variant="money" className="text-sm font-bold px-4 py-1.5">
-                      {project.keyMetric.value} {project.keyMetric.label}
-                    </Badge>
-                  </div>
+                {/* Tech stack — hidden on small screens */}
+                <span className="hidden md:block text-xs text-foreground/25 w-52 flex-shrink-0">
+                  {project.techStack.slice(0, 3).join(" · ")}
+                </span>
 
-                  {/* Description */}
-                  <CardDescription className="text-base line-clamp-2">
-                    {project.tagline}
-                  </CardDescription>
-                </CardHeader>
+                {/* Key metric */}
+                <span className="text-sm text-foreground/50 flex-shrink-0 w-28 text-right num-tabular">
+                  {project.keyMetric.value} {project.keyMetric.label}
+                </span>
 
-                <CardContent className="flex-grow flex flex-col justify-between">
-                  {/* Tech Stack Badges */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.techStack.slice(0, 4).map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.techStack.length > 4 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.techStack.length - 4} more
-                      </Badge>
-                    )}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <Button asChild size="sm" className="flex-1 group/btn">
-                      <Link href={`/projects/${project.slug}`}>
-                        View Details
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                      </Link>
-                    </Button>
-                    {project.githubUrl && (
-                      <Button asChild size="sm" variant="outline" className="aspect-square p-0">
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    )}
-                    {project.demoUrl && (
-                      <Button asChild size="sm" variant="outline" className="aspect-square p-0">
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+                {/* Arrow */}
+                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200 flex-shrink-0" />
+              </Link>
             </ScrollReveal>
           ))}
         </div>
 
-        {/* View All Projects Button */}
-        <ScrollReveal delay={0.4}>
-          <div className="text-center">
-            <Button asChild size="lg" variant="outline" className="group">
-              <Link href="/projects">
-                View All {totalProjects}+ Projects
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+        {/* Mobile view-all link */}
+        <ScrollReveal delay={0.3}>
+          <div className="sm:hidden mt-8">
+            <Link
+              href="/projects"
+              className="flex items-center gap-2 text-xs text-foreground/40 hover:text-foreground/70 transition-colors duration-200 tracking-[0.08em] uppercase"
+            >
+              View all {totalProjects}+ projects
+              <ArrowRight className="h-3 w-3" />
+            </Link>
           </div>
         </ScrollReveal>
       </div>

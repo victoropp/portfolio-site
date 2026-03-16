@@ -1,7 +1,5 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Receipt, BookOpen, Heart, Zap, BarChart2, type LucideIcon } from "lucide-react";
 
@@ -56,51 +54,62 @@ const agenticProjects: {
 
 export function AgenticProjects() {
   return (
-    <section className="py-20 md:py-32 relative">
+    <section className="py-20 md:py-32 border-t border-white/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-heading mb-4" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-              Built with <span className="text-gradient">Agentic AI</span>
-            </h2>
-            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-              End-to-end AI applications built using agentic patterns — from concept to production deployment.
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-16">
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {agenticProjects.map((project, index) => (
-            <ScrollReveal key={project.title} delay={index * 0.1}>
-              <Card className="glass glass-hover border-border/50 h-full flex flex-col group">
-                <CardHeader>
-                  <div className="w-full h-32 bg-gradient-mesh rounded-xl mb-4 flex items-center justify-center border border-border/50">
-                    <project.Icon className="h-12 w-12 text-primary/30" />
+          {/* Left: Sticky section label */}
+          <div className="lg:col-span-1">
+            <div className="lg:sticky lg:top-32">
+              <ScrollReveal>
+                <span className="section-index block mb-4">01 — Agentic AI</span>
+                <h2
+                  className="text-3xl font-bold tracking-tight text-foreground mb-6"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                >
+                  Built with<br />Agentic AI
+                </h2>
+                <span className="rule-editorial block mb-6" />
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  End-to-end applications using agentic patterns — from concept to production deployment.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+
+          {/* Right: Project list */}
+          <div className="lg:col-span-3 divide-y divide-white/5">
+            {agenticProjects.map((project, index) => (
+              <ScrollReveal key={project.title} delay={index * 0.08}>
+                <div className="py-10 group">
+                  {/* Tag + icon row */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <project.Icon className="h-4 w-4 text-foreground/25" />
+                    <span className="section-index">{project.tag}</span>
                   </div>
-                  <Badge variant="outline" className="w-fit text-xs mb-2">
-                    {project.tag}
-                  </Badge>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+
+                  {/* Title */}
+                  <h3
+                    className="text-xl font-semibold text-foreground mb-3"
+                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  >
                     {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm line-clamp-3">
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5 max-w-2xl">
                     {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-end">
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          ))}
+                  </p>
+
+                  {/* Tech — plain dot-separated text */}
+                  <p className="text-xs text-foreground/25 tracking-wide">
+                    {project.techStack.join("  ·  ")}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
