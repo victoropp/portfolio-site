@@ -1,8 +1,5 @@
 import type { Metadata } from "next"
 import { ScrollReveal } from "@/components/animations/ScrollReveal"
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { GraduationCap, Briefcase, Award, TrendingUp, Building2 } from "lucide-react"
 import { projects } from "@/lib/data/projects"
 
 export const metadata: Metadata = {
@@ -27,468 +24,278 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        {/* Hero Section */}
+
+        {/* Page Header */}
         <ScrollReveal>
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mb-20">
+            <span className="section-index block mb-6">About</span>
             <h1
-              className="text-display font-bold mb-6"
+              className="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-8"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              About <span className="text-gradient">Me</span>
+              Builder. Data Scientist.<br />Finance Expert.
             </h1>
-            <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              I&apos;m a <span className="text-primary font-semibold">Data Scientist & ML Engineer</span> who builds{" "}
-              <span className="text-accent font-semibold">production AI applications</span> using agentic AI. My background is in finance (FCCA) and data science (MSc with Distinction), which means I understand what it takes to turn a messy real-world problem into a working product.
+            <span className="rule-editorial block mb-8" />
+            <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
+              I build production AI applications using agentic AI. My background is in finance (FCCA) and data science (MSc with Distinction) — which means I understand what it takes to turn a messy real-world problem into a working product.
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Badge variant="default">ACCA Fellow</Badge>
-              <Badge variant="secondary">MBA Finance</Badge>
-              <Badge variant="accent">MSc Data Science — Distinction</Badge>
-              <Badge variant="outline">BSc Accounting (First Class)</Badge>
-            </div>
           </div>
         </ScrollReveal>
 
-        {/* Professional Summary */}
-        <ScrollReveal delay={0.2}>
-          <Card className="mb-12 p-8">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-primary flex-shrink-0">
-                <TrendingUp className="h-6 w-6" />
+        {/* Qualifications strip */}
+        <ScrollReveal delay={0.1}>
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/5 border-t border-b border-white/5 mb-20">
+            {[
+              { label: "ACCA Fellow", sub: "FCCA" },
+              { label: "MBA Finance", sub: "Wisconsin IUC" },
+              { label: "MSc Data Science", sub: "Distinction · 2025" },
+              { label: "BSc Accounting", sub: "First Class" },
+            ].map((q) => (
+              <div key={q.label} className="px-6 py-8 first:pl-0">
+                <p className="text-sm font-semibold text-foreground mb-1">{q.label}</p>
+                <p className="text-xs text-muted-foreground">{q.sub}</p>
               </div>
-              <div>
-                <h2 className="text-heading mb-4" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                  Professional Summary
-                </h2>
-                <p className="text-body text-muted-foreground mb-4">
-                  I build production AI applications using agentic AI. My background is in{" "}
-                  <strong className="text-foreground">finance (FCCA)</strong> and{" "}
-                  <strong className="text-foreground">data science (MSc with Distinction)</strong>, which means I understand what it
-                  takes to turn a messy real-world problem into a working product.
-                </p>
-                <p className="text-body text-muted-foreground mb-4">
-                  Over the past several months, I&apos;ve shipped agentic apps across{" "}
-                  <span className="text-primary font-semibold">finance</span>,{" "}
-                  <span className="text-secondary font-semibold">education</span>, and{" "}
-                  <span className="text-accent font-semibold">wellness</span> — alongside {projects.length}+ ML projects spanning
-                  fraud detection, medical imaging, NLP, and more.
-                </p>
-                <p className="text-body text-muted-foreground">
-                  <strong className="text-foreground">Proven Track Record:</strong> {projects.length}+ production ML projects deployed,
-                  consistently achieving <strong className="text-foreground">90%+ model accuracy</strong>, driving{" "}
-                  <strong className="text-foreground">millions in cost savings</strong>, and enabling data-driven decision-making
-                  at the executive level.
-                </p>
-              </div>
-            </div>
-          </Card>
+            ))}
+          </div>
         </ScrollReveal>
 
         {/* Education */}
-        <ScrollReveal delay={0.3}>
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-primary">
-                <GraduationCap className="h-6 w-6" />
+        <ScrollReveal delay={0.15}>
+          <div className="mb-16 border-t border-white/5 pt-12">
+            <span className="section-index block mb-8">Education & Certifications</span>
+            <div className="divide-y divide-white/5">
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2025</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-base font-semibold text-foreground mb-1">MSc Data Science — Distinction</p>
+                  <p className="text-sm text-muted-foreground mb-2">Middlesex University London</p>
+                  <p className="text-xs text-foreground/40 mb-2">Top 5 Best Project Award</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Machine Learning · Big Data Analytics · NLP · Cloud Systems · AI Ethics
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                    Dissertation: Food Insecurity Early Warning System — Two-stage cascade ML across 18 African nations
+                  </p>
+                </div>
               </div>
-              <h2 className="text-heading" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                Education & Certifications
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Degree Cards */}
-              <Card className="p-6 glass glass-hover border-accent/30">
-                <div className="flex items-start gap-4">
-                  <Badge variant="accent" className="mt-1">Distinction</Badge>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground mb-1">
-                      MSc Data Science
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Middlesex University London
-                    </p>
-                    <p className="text-xs text-muted mb-2">Graduated with Distinction · 2025</p>
-                    <div className="flex flex-wrap gap-1 mb-2">
-                      <Badge variant="secondary" className="text-xs">🏆 Top 5 Best Project Award</Badge>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Machine Learning, Big Data Analytics, NLP, Cloud Systems, AI Ethics
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      <span className="text-accent font-medium">Dissertation:</span> Food Insecurity Early Warning System — Two-stage cascade ML across 18 African nations
-                    </p>
-                  </div>
-                </div>
-              </Card>
 
-              <Card className="p-6 glass glass-hover">
-                <div className="flex items-start gap-4">
-                  <Badge variant="default" className="mt-1">Completed</Badge>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground mb-1">
-                      MBA Finance
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Wisconsin International University College, Ghana
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Strategic analysis, quantitative methods, data-driven decision making
-                    </p>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">MBA</p>
                 </div>
-              </Card>
-
-              <Card className="p-6 glass glass-hover">
-                <div className="flex items-start gap-4">
-                  <Badge variant="secondary" className="mt-1">Fellow</Badge>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground mb-1">
-                      FCCA (Fellow Chartered Certified Accountant)
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Association of Chartered Certified Accountants
-                    </p>
-                    <p className="text-xs text-muted">Professional Qualification</p>
-                  </div>
+                <div className="md:col-span-3">
+                  <p className="text-base font-semibold text-foreground mb-1">MBA Finance</p>
+                  <p className="text-sm text-muted-foreground">Wisconsin International University College, Ghana</p>
+                  <p className="text-xs text-muted-foreground mt-1">Strategic analysis · Quantitative methods · Data-driven decision making</p>
                 </div>
-              </Card>
-
-              <Card className="p-6 glass glass-hover">
-                <div className="flex items-start gap-4">
-                  <Badge variant="default" className="mt-1">First Class</Badge>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground mb-1">
-                      BSc Administration (Accounting)
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      University of Ghana Business School
-                    </p>
-                    <p className="text-xs text-muted">First Class Honours</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Statistical analysis, research methodology, quantitative analysis
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Professional Certifications */}
-            <div className="mt-8">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Professional Certifications</h3>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">MATLAB Programming & Analytics (MathWorks 2025)</Badge>
-                <Badge variant="outline">Microsoft Power BI Expert</Badge>
-                <Badge variant="outline">Advanced Excel & VBA Specialist</Badge>
-                <Badge variant="outline">Python for Data Science</Badge>
               </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">FCCA</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-base font-semibold text-foreground mb-1">Fellow Chartered Certified Accountant</p>
+                  <p className="text-sm text-muted-foreground">Association of Chartered Certified Accountants</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">BSc</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-base font-semibold text-foreground mb-1">BSc Administration (Accounting) — First Class</p>
+                  <p className="text-sm text-muted-foreground">University of Ghana Business School</p>
+                  <p className="text-xs text-muted-foreground mt-1">Statistical analysis · Research methodology · Quantitative analysis</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">Certs</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    MATLAB Programming & Analytics (MathWorks 2025) · Microsoft Power BI Expert · Advanced Excel & VBA Specialist · Python for Data Science
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Professional Experience */}
-        <ScrollReveal delay={0.4}>
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-secondary">
-                <Briefcase className="h-6 w-6" />
+        {/* Experience */}
+        <ScrollReveal delay={0.2}>
+          <div className="mb-16 border-t border-white/5 pt-12">
+            <span className="section-index block mb-8">Professional Experience</span>
+            <div className="divide-y divide-white/5">
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2023–2024</p>
+                </div>
+                <div className="md:col-span-3">
+                  <p className="text-base font-semibold text-foreground mb-1">Finance Manager — Analytics & Automation</p>
+                  <p className="text-sm text-muted-foreground mb-3">SIA QSR Ltd</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Architected integrated analytics platform using Python and Power BI, improving executive decision-making speed by 35%.
+                    Developed predictive financial models achieving 20% improvement in resource allocation accuracy.
+                    Built automated reporting systems reducing manual processing time by 40%.
+                  </p>
+                  <p className="text-xs text-foreground/40">Python · Power BI · Predictive Modeling · Process Automation</p>
+                </div>
               </div>
-              <h2 className="text-heading" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                Professional Experience
-              </h2>
-            </div>
-            <div className="space-y-6">
-              {/* Experience Timeline */}
-              <Card className="p-6 glass glass-hover">
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <h3 className="text-lg font-bold text-foreground">
-                          Finance Manager (Analytics & Automation)
-                        </h3>
-                        <p className="text-sm text-muted-foreground">SIA QSR Ltd</p>
-                      </div>
-                      <Badge variant="secondary">Jul 2023 - Dec 2024</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      Architected integrated analytics platform using Python and Power BI, improving executive decision-making speed by 35%.
-                      Developed predictive financial models achieving 20% improvement in resource allocation accuracy.
-                      Built automated reporting systems reducing manual processing time by 40%.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline">Python</Badge>
-                      <Badge variant="outline">Power BI</Badge>
-                      <Badge variant="outline">Predictive Modeling</Badge>
-                      <Badge variant="outline">Process Automation</Badge>
-                    </div>
-                  </div>
-                </div>
-              </Card>
 
-              <Card className="p-6 glass glass-hover">
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <h3 className="text-lg font-bold text-foreground">
-                          Finance Manager (Business Intelligence & Predictive Analytics)
-                        </h3>
-                        <p className="text-sm text-muted-foreground">Chase Petroleum Company Limited</p>
-                      </div>
-                      <Badge variant="outline">Jul 2020 - Jun 2023</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      Spearheaded enterprise-wide BI transformation, reducing manual reporting by 50% and delivering interactive dashboards
-                      for $50M+ annual revenue operations. Designed statistical forecasting models improving budget accuracy by 15%.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline">BI Transformation</Badge>
-                      <Badge variant="outline">Time Series Analysis</Badge>
-                      <Badge variant="outline">ETL Pipelines</Badge>
-                      <Badge variant="outline">$50M+ Operations</Badge>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2020–2023</p>
                 </div>
-              </Card>
+                <div className="md:col-span-3">
+                  <p className="text-base font-semibold text-foreground mb-1">Finance Manager — Business Intelligence & Predictive Analytics</p>
+                  <p className="text-sm text-muted-foreground mb-3">Chase Petroleum Company Limited</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Spearheaded enterprise-wide BI transformation, reducing manual reporting by 50% and delivering interactive dashboards
+                    for $50M+ annual revenue operations. Designed statistical forecasting models improving budget accuracy by 15%.
+                  </p>
+                  <p className="text-xs text-foreground/40">BI Transformation · Time Series Analysis · ETL Pipelines · $50M+ Operations</p>
+                </div>
+              </div>
 
-              <Card className="p-6 glass glass-hover">
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-foreground mb-2">
-                      Progressive Leadership in Oil & Gas Analytics
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      Puma Energy (2017-2020) | Juwel Energy (2013-2016) | Cardinal Petroleum (2009-2013)
-                    </p>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      Led analytical operations across multiple subsidiaries, managing $300M+ treasury operations.
-                      Achieved zero audit discrepancies and 100% reporting accuracy. Improved profit margin visibility by 25%
-                      and working capital efficiency by 18% through predictive modeling.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline">Treasury Analytics</Badge>
-                      <Badge variant="outline">Risk Modeling</Badge>
-                      <Badge variant="outline">Financial Modeling</Badge>
-                      <Badge variant="outline">Team Leadership</Badge>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                <div className="md:col-span-1">
+                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2009–2020</p>
                 </div>
-              </Card>
+                <div className="md:col-span-3">
+                  <p className="text-base font-semibold text-foreground mb-1">Progressive Leadership — Oil & Gas Analytics</p>
+                  <p className="text-sm text-muted-foreground mb-3">Puma Energy · Juwel Energy · Cardinal Petroleum</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    Led analytical operations across multiple subsidiaries, managing $300M+ treasury operations.
+                    Achieved zero audit discrepancies and 100% reporting accuracy. Improved profit margin visibility by 25%
+                    and working capital efficiency by 18% through predictive modeling.
+                  </p>
+                  <p className="text-xs text-foreground/40">Treasury Analytics · Risk Modeling · Financial Modeling · Team Leadership</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </ScrollReveal>
 
         {/* Core Competencies */}
-        <ScrollReveal delay={0.5}>
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-accent">
-                <Award className="h-6 w-6" />
-              </div>
-              <h2 className="text-heading" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                Core Competencies
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-6 glass glass-hover">
-                <h3 className="text-lg font-bold text-foreground mb-4">Machine Learning & AI</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Supervised & Unsupervised Learning (Classification, Regression, Clustering)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Deep Learning (TensorFlow, Keras, PyTorch)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>NLP & Sentiment Analysis (BERT, Transformers)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Computer Vision (CNN, Image Classification)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Time Series Forecasting (ARIMA, LSTM)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>MLOps & Model Deployment (Production Pipelines, Monitoring)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Explainable AI (SHAP, LIME, Feature Importance)</span>
-                  </li>
-                </ul>
-              </Card>
+        <ScrollReveal delay={0.25}>
+          <div className="mb-16 border-t border-white/5 pt-12">
+            <span className="section-index block mb-8">Core Competencies</span>
+            <div className="divide-y divide-white/5">
 
-              <Card className="p-6 glass glass-hover">
-                <h3 className="text-lg font-bold text-secondary mb-4">Financial Analytics</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary mt-1">•</span>
-                    <span>Financial Modeling & Forecasting</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary mt-1">•</span>
-                    <span>Risk Analysis & Management</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary mt-1">•</span>
-                    <span>Business Intelligence & Reporting</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary mt-1">•</span>
-                    <span>Strategic Planning & Decision Support</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary mt-1">•</span>
-                    <span>Accounting Systems & Process Optimization</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-secondary mt-1">•</span>
-                    <span>Regulatory Compliance & Audit Analytics (IFRS, SOX)</span>
-                  </li>
-                </ul>
-              </Card>
+              {[
+                {
+                  title: "Machine Learning & AI",
+                  items: [
+                    "Supervised & Unsupervised Learning (Classification, Regression, Clustering)",
+                    "Deep Learning (TensorFlow, Keras, PyTorch)",
+                    "NLP & Sentiment Analysis (BERT, Transformers)",
+                    "Computer Vision (CNN, Image Classification)",
+                    "Time Series Forecasting (ARIMA, LSTM)",
+                    "MLOps & Model Deployment (Production Pipelines, Monitoring)",
+                    "Explainable AI (SHAP, LIME, Feature Importance)",
+                  ],
+                },
+                {
+                  title: "AI & LLM Development",
+                  items: [
+                    "LLM APIs — agentic patterns, tool use, function calling",
+                    "Multi-Agent Systems — orchestration, handoffs, error recovery",
+                    "Production LLM Apps — deployed across finance, education, wellness",
+                    "Agentic Developer Platform — API provisioning and integration",
+                  ],
+                },
+                {
+                  title: "Financial Analytics",
+                  items: [
+                    "Financial Modeling & Forecasting",
+                    "Risk Analysis & Management",
+                    "Business Intelligence & Reporting",
+                    "Strategic Planning & Decision Support",
+                    "Accounting Systems & Process Optimization",
+                    "Regulatory Compliance & Audit Analytics (IFRS, SOX)",
+                  ],
+                },
+                {
+                  title: "Technical Stack",
+                  items: [
+                    "Languages: Python, R, SQL, VBA, MATLAB",
+                    "ML/DL: scikit-learn, TensorFlow, Keras, PyTorch, XGBoost",
+                    "Data: Pandas, NumPy, PySpark, SQL Server, PostgreSQL",
+                    "Viz: Power BI, Tableau, Matplotlib, Seaborn, Plotly",
+                    "Tools: Git, Docker, Streamlit, Flask, FastAPI",
+                    "Cloud: AWS (SageMaker, S3, EC2), Azure ML, GCP",
+                  ],
+                },
+                {
+                  title: "Domain Expertise",
+                  items: [
+                    "Financial Services: Fraud Detection, Risk Modeling, Credit Scoring",
+                    "Healthcare: Medical Image Classification, Disease Prediction",
+                    "Retail: Demand Forecasting, Customer Analytics, Market Basket Analysis",
+                    "Oil & Gas: Energy Trading & Pricing, Operations Optimization",
+                  ],
+                },
+              ].map((section) => (
+                <div key={section.title} className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
+                  <div className="md:col-span-1">
+                    <p className="section-index">{section.title}</p>
+                  </div>
+                  <div className="md:col-span-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {section.items.join(" · ")}
+                    </p>
+                  </div>
+                </div>
+              ))}
 
-              <Card className="p-6 glass glass-hover">
-                <h3 className="text-lg font-bold text-foreground mb-4">Technical Stack</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span><strong>Languages:</strong> Python, R, SQL, VBA, MATLAB</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span><strong>ML/DL:</strong> scikit-learn, TensorFlow, Keras, PyTorch, XGBoost</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span><strong>Data:</strong> Pandas, NumPy, PySpark, SQL Server, PostgreSQL</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span><strong>Viz:</strong> Power BI, Tableau, Matplotlib, Seaborn, Plotly</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span><strong>Tools:</strong> Git, Docker, Streamlit, Flask, FastAPI</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span><strong>Cloud:</strong> AWS (SageMaker, S3, EC2), Azure ML, GCP</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="p-6 glass glass-hover border-primary/20">
-                <h3 className="text-lg font-bold text-primary mb-4">AI & LLM Development</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>LLM APIs</strong> — agentic patterns, tool use, function calling</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>Multi-Agent Systems</strong> — orchestration, handoffs, error recovery</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>Production LLM Apps</strong> — deployed across finance, education, wellness</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>Agentic Developer Platform</strong> — API provisioning and integration</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="p-6 glass glass-hover">
-                <h3 className="text-lg font-bold text-foreground mb-4">Domain Expertise</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>Financial Services:</strong> Fraud Detection, Risk Modeling, Credit Scoring</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>Healthcare:</strong> Medical Image Classification, Disease Prediction</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>Retail:</strong> Demand Forecasting, Customer Analytics, Market Basket Analysis</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>Oil & Gas:</strong> Energy Trading & Pricing, Operations Optimization</span>
-                  </li>
-                </ul>
-              </Card>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Unique Value Proposition */}
-        <ScrollReveal delay={0.6}>
-          <Card className="mt-12 p-8 glass border-primary/20">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-primary flex-shrink-0">
-                <Building2 className="h-6 w-6" />
-              </div>
-              <div>
-                <h2 className="text-heading mb-4" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                  What Sets Me Apart
-                </h2>
-                <div className="space-y-4 text-body text-muted-foreground">
-                  <p>
-                    <strong className="text-foreground">Builder-Practitioner:</strong> I don&apos;t just build ML models — I ship full{" "}
-                    <strong className="text-primary">AI-powered applications</strong> using agentic AI. From agentic ERPs to AI tutors,
-                    I&apos;ve gone from concept to production across multiple domains, combining deep{" "}
-                    <strong className="text-accent">finance expertise (FCCA)</strong> with hands-on AI development.
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Full-Stack ML Expertise:</strong> From{" "}
-                    <span className="text-primary">deep learning (PyTorch, TensorFlow)</span> to{" "}
-                    <span className="text-secondary">gradient boosting (XGBoost, LightGBM, CatBoost)</span> to{" "}
-                    <span className="text-accent">NLP transformers (BERT, GPT)</span> — I select and implement the right
-                    technique for each business problem, not just the trendiest algorithm.
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Multi-Domain Versatility:</strong> Proven success across{" "}
-                    <strong className="text-foreground">Finance</strong> (fraud detection, stock forecasting, insurance pricing),{" "}
-                    <strong className="text-foreground">Healthcare</strong> (medical imaging, disease prediction),{" "}
-                    <strong className="text-foreground">Retail</strong> (demand forecasting, customer analytics),{" "}
-                    <strong className="text-foreground">NLP</strong> (sentiment analysis, NER), and{" "}
-                    <strong className="text-foreground">Computer Vision</strong> (object detection, image classification).
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Production-First Mindset:</strong> Every project includes interactive
-                    Streamlit dashboards, FastAPI endpoints, Docker deployment, and comprehensive documentation. I build
-                    systems that stakeholders can actually use — not just notebooks that collect dust.
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Explainable AI Champion:</strong> SHAP, LIME, Grad-CAM, and feature
-                    importance analysis in every project. I believe ML models must be interpretable for business adoption,
-                    regulatory compliance, and building stakeholder trust.
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Proven Impact:</strong> {projects.length}+ production ML projects with
-                    metrics like <strong className="text-primary">99.78% R²</strong>,{" "}
-                    <strong className="text-secondary">98% ROC-AUC</strong>,{" "}
-                    <strong className="text-accent">$131K+ savings per 100K transactions</strong>, and consistent delivery
-                    of measurable business outcomes across diverse industries.
-                  </p>
-                </div>
-              </div>
+        {/* What Sets Me Apart */}
+        <ScrollReveal delay={0.3}>
+          <div className="border-t border-white/5 pt-12">
+            <span className="section-index block mb-8">What Sets Me Apart</span>
+            <div className="max-w-3xl space-y-6 text-sm text-muted-foreground leading-relaxed">
+              <p>
+                <strong className="text-foreground">Builder-Practitioner:</strong> I don&apos;t just build ML models — I ship full AI-powered applications using agentic AI.
+                From agentic ERPs to AI tutors, I&apos;ve gone from concept to production across multiple domains,
+                combining deep finance expertise (FCCA) with hands-on AI development.
+              </p>
+              <p>
+                <strong className="text-foreground">Full-Stack ML Expertise:</strong> From deep learning (PyTorch, TensorFlow) to gradient boosting
+                (XGBoost, LightGBM, CatBoost) to NLP transformers (BERT, GPT) — I select and implement the right
+                technique for each business problem, not just the trendiest algorithm.
+              </p>
+              <p>
+                <strong className="text-foreground">Multi-Domain Versatility:</strong> Proven success across Finance (fraud detection, stock forecasting),
+                Healthcare (medical imaging, disease prediction), Retail (demand forecasting, customer analytics),
+                NLP (sentiment analysis, NER), and Computer Vision (object detection, image classification).
+              </p>
+              <p>
+                <strong className="text-foreground">Production-First Mindset:</strong> Every project includes interactive Streamlit dashboards,
+                FastAPI endpoints, Docker deployment, and comprehensive documentation. I build systems that stakeholders
+                can actually use — not just notebooks that collect dust.
+              </p>
+              <p>
+                <strong className="text-foreground">Proven Impact:</strong> {projects.length}+ production ML projects with metrics like 99.78% R²,
+                98% ROC-AUC, $131K+ savings per 100K transactions, and consistent delivery of measurable business
+                outcomes across diverse industries.
+              </p>
             </div>
-          </Card>
+          </div>
         </ScrollReveal>
+
       </div>
     </div>
   )

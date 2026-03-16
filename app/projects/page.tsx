@@ -105,50 +105,47 @@ const ProjectsPage = () => {
   }, [filters]);
 
   const heroContent = (
-    <>
-      <h1 className="mb-4 text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
-        Data Science{' '}
-        <span className="text-gradient">
-          Portfolio
-        </span>
+    <div className="max-w-3xl">
+      <span className="section-index block mb-6">Work</span>
+      <h1
+        className="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-8"
+        style={{ fontFamily: "var(--font-space-grotesk)" }}
+      >
+        Data Science Portfolio
       </h1>
-      <p className="mx-auto max-w-3xl text-lg text-muted-foreground md:text-xl">
-        Explore production-grade machine learning projects with proven business
-        impact. From fraud detection to medical imaging, each project demonstrates
-        real-world value.
+      <span className="rule-editorial block mb-8" />
+      <p className="text-base text-muted-foreground mb-10 max-w-xl leading-relaxed">
+        Production-grade machine learning projects with proven business impact — from fraud detection to medical imaging.
       </p>
-      <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-        <div className="rounded-lg bg-card/50 px-4 py-2">
-          <span className="text-primary font-semibold">{projects.length}</span>{' '}
-          <span className="text-muted-foreground">Production Projects</span>
+      <div className="flex flex-wrap gap-8 text-sm">
+        <div>
+          <span className="text-2xl font-bold num-tabular text-foreground" style={{ fontFamily: "var(--font-space-grotesk)" }}>{projects.length}</span>
+          <span className="block text-xs text-muted-foreground uppercase tracking-widest mt-1">Projects</span>
         </div>
-        <div className="rounded-lg bg-card/50 px-4 py-2">
-          <span className="text-accent font-semibold">{uniqueDomains}+</span>{' '}
-          <span className="text-muted-foreground">Industry Domains</span>
+        <div>
+          <span className="text-2xl font-bold num-tabular text-foreground" style={{ fontFamily: "var(--font-space-grotesk)" }}>{uniqueDomains}+</span>
+          <span className="block text-xs text-muted-foreground uppercase tracking-widest mt-1">Domains</span>
         </div>
-        <div className="rounded-lg bg-card/50 px-4 py-2">
-          <span className="text-secondary font-semibold">End-to-End</span>{' '}
-          <span className="text-muted-foreground">ML Pipelines</span>
+        <div>
+          <span className="text-2xl font-bold text-foreground" style={{ fontFamily: "var(--font-space-grotesk)" }}>E2E</span>
+          <span className="block text-xs text-muted-foreground uppercase tracking-widest mt-1">ML Pipelines</span>
         </div>
       </div>
-    </>
+    </div>
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-card/30 to-background">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="border-b border-border bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 py-16">
-        <div className="container-custom">
+      <section className="border-b border-white/5 py-20 md:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {!hydrated ? (
-            <div className="text-center">
-              {heroContent}
-            </div>
+            heroContent
           ) : (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
             >
               {heroContent}
             </motion.div>
@@ -158,7 +155,7 @@ const ProjectsPage = () => {
 
       {/* Filters and Projects Grid */}
       <section className="py-12">
-        <div className="container-custom">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filters */}
           <ProjectFilters
             filters={filters}

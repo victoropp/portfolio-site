@@ -5,8 +5,8 @@
 @layer base {
   :root {
     /* Design System Colors - Dark Theme */
-    --background: 210 50% 8%; /* #0A0E27 - Deep navy */
-    --foreground: 210 20% 98%; /* #F8FAFC - Off-white */
+    --background: 222 25% 11%; /* #141824 - Lifted dark navy */
+    --foreground: 210 20% 96%; /* #F2F4F8 - Off-white */
 
     /* Primary - Cyan for data science */
     --primary: 190 100% 50%; /* #00D9FF - Cyan */
@@ -21,7 +21,7 @@
     --accent-foreground: 210 50% 8%;
 
     /* Card backgrounds */
-    --card: 220 39% 16%; /* #1A1F3A */
+    --card: 220 20% 16%; /* #1E2230 */
     --card-foreground: 210 20% 98%;
 
     /* Borders */

@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { ScrollReveal } from "@/components/animations/ScrollReveal"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Linkedin, Mail, Github } from "lucide-react"
+import { Linkedin, Mail, Github, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact | Victor Collins Oppon",
@@ -11,109 +9,77 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen gradient-mesh">
-      <div className="container-custom py-20 md:py-32">
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <ScrollReveal>
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="max-w-3xl">
+            <span className="section-index block mb-6">Contact</span>
             <h1
-              className="text-display font-bold mb-6"
+              className="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-8"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              Get In <span className="text-gradient">Touch</span>
+              Let&apos;s build something together.
             </h1>
-            <p className="text-body-lg text-muted-foreground">
-              Open to senior data science roles, ML engineering positions, and consulting opportunities.
+            <span className="rule-editorial block mb-8" />
+            <p className="text-base text-muted-foreground mb-16 max-w-xl leading-relaxed">
+              Open to applied AI roles, developer relations, data science, and consulting. Let&apos;s discuss how agentic AI and production ML can drive business value.
             </p>
-          </div>
-        </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
-          <div className="max-w-2xl mx-auto grid gap-6">
-            {/* LinkedIn */}
-            <Card className="p-6">
-              <div className="flex items-center justify-between">
+            {/* Contact links */}
+            <div className="divide-y divide-white/5 border-t border-white/5">
+              <a
+                href="https://www.linkedin.com/in/victor-collins-oppon-fcca-mba-bsc-01541019/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
+              >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-primary">
-                    <Linkedin className="h-6 w-6" />
-                  </div>
+                  <Linkedin className="h-5 w-5 text-foreground/30" />
                   <div>
-                    <h3 className="text-lg font-bold text-foreground">LinkedIn</h3>
-                    <p className="text-sm text-muted">Connect professionally</p>
+                    <p className="text-base font-medium text-foreground">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">Connect professionally</p>
                   </div>
                 </div>
-                <Button asChild>
-                  <a
-                    href="https://www.linkedin.com/in/victor-collins-oppon-fcca-mba-bsc-01541019/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Connect
-                  </a>
-                </Button>
-              </div>
-            </Card>
+                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200" />
+              </a>
 
-            {/* Email */}
-            <Card className="p-6">
-              <div className="flex items-center justify-between">
+              <a
+                href="mailto:victoropp@gmail.com"
+                className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
+              >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-secondary">
-                    <Mail className="h-6 w-6" />
-                  </div>
+                  <Mail className="h-5 w-5 text-foreground/30" />
                   <div>
-                    <h3 className="text-lg font-bold text-foreground">Email</h3>
-                    <p className="text-sm text-muted">victoropp@gmail.com</p>
+                    <p className="text-base font-medium text-foreground">Email</p>
+                    <p className="text-sm text-muted-foreground">victoropp@gmail.com</p>
                   </div>
                 </div>
-                <Button asChild variant="secondary">
-                  <a href="mailto:victoropp@gmail.com">Send Email</a>
-                </Button>
-              </div>
-            </Card>
+                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200" />
+              </a>
 
-            {/* GitHub */}
-            <Card className="p-6">
-              <div className="flex items-center justify-between">
+              <a
+                href="https://github.com/victoropp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
+              >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl glass flex items-center justify-center text-foreground">
-                    <Github className="h-6 w-6" />
-                  </div>
+                  <Github className="h-5 w-5 text-foreground/30" />
                   <div>
-                    <h3 className="text-lg font-bold text-foreground">GitHub</h3>
-                    <p className="text-sm text-muted">View my projects</p>
+                    <p className="text-base font-medium text-foreground">GitHub</p>
+                    <p className="text-sm text-muted-foreground">View my projects</p>
                   </div>
                 </div>
-                <Button asChild variant="outline">
-                  <a
-                    href="https://github.com/victoropp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Profile
-                  </a>
-                </Button>
-              </div>
-            </Card>
+                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200" />
+              </a>
+            </div>
 
-          </div>
-        </ScrollReveal>
-
-        {/* Availability Note */}
-        <ScrollReveal delay={0.3}>
-          <div className="max-w-2xl mx-auto mt-12 text-center">
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                <span>Available for immediate hire</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span>Remote or Hybrid</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-secondary" />
-                <span>Consulting welcome</span>
-              </div>
+            {/* Availability */}
+            <div className="mt-12 flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span className="text-xs text-muted-foreground tracking-wide">
+                Available for immediate hire · Remote or Hybrid · Consulting welcome
+              </span>
             </div>
           </div>
         </ScrollReveal>
