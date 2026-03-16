@@ -37,7 +37,7 @@ export function SkillsOverview() {
 
                 {/* Skills — plain dot-separated text */}
                 <div className="md:col-span-3">
-                  <p className="text-sm text-foreground/55 leading-relaxed">
+                  <p className="text-sm text-foreground/65 leading-relaxed">
                     {category.skills.join(" · ")}
                   </p>
                 </div>

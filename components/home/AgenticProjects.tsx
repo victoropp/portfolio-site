@@ -84,7 +84,7 @@ export function AgenticProjects() {
                 <div className="py-10 group">
                   {/* Tag + icon row */}
                   <div className="flex items-center gap-3 mb-4">
-                    <project.Icon className="h-4 w-4 text-foreground/25" />
+                    <project.Icon className="h-4 w-4 text-foreground/45" />
                     <span className="section-index">{project.tag}</span>
                   </div>
 
@@ -102,7 +102,7 @@ export function AgenticProjects() {
                   </p>
 
                   {/* Tech — plain dot-separated text */}
-                  <p className="text-xs text-foreground/25 tracking-wide">
+                  <p className="text-xs text-foreground/45 tracking-wide">
                     {project.techStack.join("  ·  ")}
                   </p>
                 </div>

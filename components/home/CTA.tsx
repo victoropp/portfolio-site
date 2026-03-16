@@ -34,7 +34,7 @@ export function CTA() {
                 href="https://www.linkedin.com/in/victor-collins-oppon-fcca-mba-bsc-01541019/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm text-foreground/55 hover:text-foreground transition-colors duration-200 group"
+                className="flex items-center gap-3 text-sm text-foreground/65 hover:text-foreground transition-colors duration-200 group"
               >
                 <Linkedin className="h-4 w-4" />
                 <span>Connect on LinkedIn</span>
@@ -42,7 +42,7 @@ export function CTA() {
               </a>
               <a
                 href="mailto:victoropp@gmail.com"
-                className="flex items-center gap-3 text-sm text-foreground/55 hover:text-foreground transition-colors duration-200 group"
+                className="flex items-center gap-3 text-sm text-foreground/65 hover:text-foreground transition-colors duration-200 group"
               >
                 <Mail className="h-4 w-4" />
                 <span>victoropp@gmail.com</span>

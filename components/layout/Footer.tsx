@@ -32,7 +32,7 @@ export function Footer() {
         <div className="flex items-center justify-between mb-6">
           <Link
             href="/"
-            className="text-sm font-medium tracking-[0.08em] uppercase text-foreground/40 hover:text-foreground/70 transition-colors duration-200"
+            className="text-sm font-medium tracking-[0.08em] uppercase text-foreground/65 hover:text-foreground/70 transition-colors duration-200"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             Victor Collins Oppon
@@ -46,7 +46,7 @@ export function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/25 hover:text-foreground/60 transition-colors duration-200"
+                  className="text-foreground/45 hover:text-foreground/60 transition-colors duration-200"
                   aria-label={link.name}
                 >
                   <Icon className="h-4 w-4" />
@@ -61,10 +61,10 @@ export function Footer() {
 
         {/* Bottom row: copyright + tech note */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-          <p className="text-xs text-foreground/25">
+          <p className="text-xs text-foreground/45">
             &copy; {currentYear} Victor Collins Oppon. All rights reserved.
           </p>
-          <p className="text-xs text-foreground/25">
+          <p className="text-xs text-foreground/45">
             Next.js · TypeScript · Tailwind CSS
           </p>
         </div>

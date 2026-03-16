@@ -34,13 +34,13 @@ export default function ContactPage() {
                 className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
               >
                 <div className="flex items-center gap-4">
-                  <Linkedin className="h-5 w-5 text-foreground/30" />
+                  <Linkedin className="h-5 w-5 text-foreground/50" />
                   <div>
                     <p className="text-base font-medium text-foreground">LinkedIn</p>
                     <p className="text-sm text-muted-foreground">Connect professionally</p>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="h-4 w-4 text-foreground/55 group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
               </a>
 
               <a
@@ -48,13 +48,13 @@ export default function ContactPage() {
                 className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
               >
                 <div className="flex items-center gap-4">
-                  <Mail className="h-5 w-5 text-foreground/30" />
+                  <Mail className="h-5 w-5 text-foreground/50" />
                   <div>
                     <p className="text-base font-medium text-foreground">Email</p>
                     <p className="text-sm text-muted-foreground">victoropp@gmail.com</p>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="h-4 w-4 text-foreground/55 group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
               </a>
 
               <a
@@ -64,13 +64,13 @@ export default function ContactPage() {
                 className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
               >
                 <div className="flex items-center gap-4">
-                  <Github className="h-5 w-5 text-foreground/30" />
+                  <Github className="h-5 w-5 text-foreground/50" />
                   <div>
                     <p className="text-base font-medium text-foreground">GitHub</p>
                     <p className="text-sm text-muted-foreground">View my projects</p>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="h-4 w-4 text-foreground/55 group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
               </a>
             </div>
 

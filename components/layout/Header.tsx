@@ -60,7 +60,7 @@ export function Header() {
                   "text-xs font-medium tracking-[0.1em] uppercase transition-colors duration-200",
                   pathname === item.href
                     ? "text-foreground"
-                    : "text-foreground/40 hover:text-foreground/80"
+                    : "text-foreground/65 hover:text-foreground/80"
                 )}
               >
                 {item.name}
@@ -70,7 +70,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground/50 hover:text-foreground transition-colors duration-200"
+            className="md:hidden p-2 text-foreground/60 hover:text-foreground transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -90,7 +90,7 @@ export function Header() {
                     "text-xs font-medium tracking-[0.1em] uppercase py-3 px-2 transition-colors duration-200",
                     pathname === item.href
                       ? "text-foreground"
-                      : "text-foreground/40 hover:text-foreground/80"
+                      : "text-foreground/65 hover:text-foreground/80"
                   )}
                 >
                   {item.name}

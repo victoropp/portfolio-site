@@ -26,7 +26,7 @@ export function FeaturedProjects() {
             </div>
             <Link
               href="/projects"
-              className="hidden sm:flex items-center gap-2 text-xs text-foreground/40 hover:text-foreground/70 transition-colors duration-200 tracking-[0.08em] uppercase"
+              className="hidden sm:flex items-center gap-2 text-xs text-foreground/65 hover:text-foreground/70 transition-colors duration-200 tracking-[0.08em] uppercase"
             >
               View all {totalProjects}+
               <ArrowRight className="h-3 w-3" />
@@ -56,17 +56,17 @@ export function FeaturedProjects() {
                 </span>
 
                 {/* Tech stack — hidden on small screens */}
-                <span className="hidden md:block text-xs text-foreground/25 w-52 flex-shrink-0">
+                <span className="hidden md:block text-xs text-foreground/45 w-52 flex-shrink-0">
                   {project.techStack.slice(0, 3).join(" · ")}
                 </span>
 
                 {/* Key metric */}
-                <span className="text-sm text-foreground/50 flex-shrink-0 w-28 text-right num-tabular">
+                <span className="text-sm text-foreground/60 flex-shrink-0 w-28 text-right num-tabular">
                   {project.keyMetric.value} {project.keyMetric.label}
                 </span>
 
                 {/* Arrow */}
-                <ArrowRight className="h-4 w-4 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 transition-all duration-200 flex-shrink-0" />
+                <ArrowRight className="h-4 w-4 text-foreground/40 group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200 flex-shrink-0" />
               </Link>
             </ScrollReveal>
           ))}
@@ -77,7 +77,7 @@ export function FeaturedProjects() {
           <div className="sm:hidden mt-8">
             <Link
               href="/projects"
-              className="flex items-center gap-2 text-xs text-foreground/40 hover:text-foreground/70 transition-colors duration-200 tracking-[0.08em] uppercase"
+              className="flex items-center gap-2 text-xs text-foreground/65 hover:text-foreground/70 transition-colors duration-200 tracking-[0.08em] uppercase"
             >
               View all {totalProjects}+ projects
               <ArrowRight className="h-3 w-3" />

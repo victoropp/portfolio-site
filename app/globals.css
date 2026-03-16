@@ -30,8 +30,8 @@
     --ring: 190 100% 50%;
 
     /* Muted colors */
-    --muted: 215 20% 45%; /* #64748B */
-    --muted-foreground: 215 16% 65%;
+    --muted: 215 20% 55%; /* lifted */
+    --muted-foreground: 215 16% 75%; /* was 65% — boosted for readability */
 
     /* Destructive */
     --destructive: 0 84.2% 60.2%;
@@ -91,7 +91,7 @@
     font-size: 0.6875rem;
     font-weight: 500;
     letter-spacing: 0.15em;
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.45);
     text-transform: uppercase;
   }
 

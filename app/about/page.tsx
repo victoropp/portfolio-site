@@ -67,12 +67,12 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2025</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">2025</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-base font-semibold text-foreground mb-1">MSc Data Science — Distinction</p>
                   <p className="text-sm text-muted-foreground mb-2">Middlesex University London</p>
-                  <p className="text-xs text-foreground/40 mb-2">Top 5 Best Project Award</p>
+                  <p className="text-xs text-foreground/55 mb-2">Top 5 Best Project Award</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     Machine Learning · Big Data Analytics · NLP · Cloud Systems · AI Ethics
                   </p>
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">MBA</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">MBA</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-base font-semibold text-foreground mb-1">MBA Finance</p>
@@ -95,7 +95,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">FCCA</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">FCCA</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-base font-semibold text-foreground mb-1">Fellow Chartered Certified Accountant</p>
@@ -105,7 +105,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">BSc</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">BSc</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-base font-semibold text-foreground mb-1">BSc Administration (Accounting) — First Class</p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">Certs</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">Certs</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -137,7 +137,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2023–2024</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">2023–2024</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-base font-semibold text-foreground mb-1">Finance Manager — Analytics & Automation</p>
@@ -147,13 +147,13 @@ export default function AboutPage() {
                     Developed predictive financial models achieving 20% improvement in resource allocation accuracy.
                     Built automated reporting systems reducing manual processing time by 40%.
                   </p>
-                  <p className="text-xs text-foreground/40">Python · Power BI · Predictive Modeling · Process Automation</p>
+                  <p className="text-xs text-foreground/55">Python · Power BI · Predictive Modeling · Process Automation</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2020–2023</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">2020–2023</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-base font-semibold text-foreground mb-1">Finance Manager — Business Intelligence & Predictive Analytics</p>
@@ -162,13 +162,13 @@ export default function AboutPage() {
                     Spearheaded enterprise-wide BI transformation, reducing manual reporting by 50% and delivering interactive dashboards
                     for $50M+ annual revenue operations. Designed statistical forecasting models improving budget accuracy by 15%.
                   </p>
-                  <p className="text-xs text-foreground/40">BI Transformation · Time Series Analysis · ETL Pipelines · $50M+ Operations</p>
+                  <p className="text-xs text-foreground/55">BI Transformation · Time Series Analysis · ETL Pipelines · $50M+ Operations</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16 py-7">
                 <div className="md:col-span-1">
-                  <p className="text-xs text-foreground/40 uppercase tracking-widest">2009–2020</p>
+                  <p className="text-xs text-foreground/55 uppercase tracking-widest">2009–2020</p>
                 </div>
                 <div className="md:col-span-3">
                   <p className="text-base font-semibold text-foreground mb-1">Progressive Leadership — Oil & Gas Analytics</p>
@@ -178,7 +178,7 @@ export default function AboutPage() {
                     Achieved zero audit discrepancies and 100% reporting accuracy. Improved profit margin visibility by 25%
                     and working capital efficiency by 18% through predictive modeling.
                   </p>
-                  <p className="text-xs text-foreground/40">Treasury Analytics · Risk Modeling · Financial Modeling · Team Leadership</p>
+                  <p className="text-xs text-foreground/55">Treasury Analytics · Risk Modeling · Financial Modeling · Team Leadership</p>
                 </div>
               </div>
 
