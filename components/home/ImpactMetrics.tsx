@@ -52,7 +52,7 @@ export function ImpactMetrics() {
   ];
 
   return (
-    <section className="py-20 md:py-32 border-t border-white/5">
+    <section className="py-20 md:py-32 border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
@@ -68,7 +68,7 @@ export function ImpactMetrics() {
         </ScrollReveal>
 
         {/* Metrics strip — horizontal, no cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
           {metrics.map((metric, index) => (
             <ScrollReveal key={metric.label} delay={index * 0.08}>
               <div className="px-6 lg:px-10 py-10 first:pl-0">

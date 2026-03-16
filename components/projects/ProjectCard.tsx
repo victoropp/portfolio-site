@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
         <div className="relative h-48 overflow-hidden bg-gradient-to-br from-cyan-500/10 to-purple-500/10">
           {/* Placeholder for thumbnail - will be replaced with actual images */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-6xl font-bold text-cyan-500/20">
+            <div className="text-6xl font-bold text-white/30">
               {project.title.split(' ').map(word => word[0]).join('').slice(0, 3)}
             </div>
           </div>

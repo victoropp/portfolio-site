@@ -26,7 +26,7 @@ export default function ContactPage() {
             </p>
 
             {/* Contact links */}
-            <div className="divide-y divide-white/5 border-t border-white/5">
+            <div className="divide-y divide-white/10 border-t border-white/10">
               <a
                 href="https://www.linkedin.com/in/victor-collins-oppon-fcca-mba-bsc-01541019/"
                 target="_blank"
@@ -34,13 +34,13 @@ export default function ContactPage() {
                 className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
               >
                 <div className="flex items-center gap-4">
-                  <Linkedin className="h-5 w-5 text-foreground/50" />
+                  <Linkedin className="h-5 w-5 text-muted-foreground" />
                   <div>
                     <p className="text-base font-medium text-foreground">LinkedIn</p>
                     <p className="text-sm text-muted-foreground">Connect professionally</p>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground/55 group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
               </a>
 
               <a
@@ -48,13 +48,13 @@ export default function ContactPage() {
                 className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
               >
                 <div className="flex items-center gap-4">
-                  <Mail className="h-5 w-5 text-foreground/50" />
+                  <Mail className="h-5 w-5 text-muted-foreground" />
                   <div>
                     <p className="text-base font-medium text-foreground">Email</p>
                     <p className="text-sm text-muted-foreground">victoropp@gmail.com</p>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground/55 group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
               </a>
 
               <a
@@ -64,13 +64,13 @@ export default function ContactPage() {
                 className="group flex items-center justify-between py-6 hover:border-white/12 transition-colors duration-200"
               >
                 <div className="flex items-center gap-4">
-                  <Github className="h-5 w-5 text-foreground/50" />
+                  <Github className="h-5 w-5 text-muted-foreground" />
                   <div>
                     <p className="text-base font-medium text-foreground">GitHub</p>
                     <p className="text-sm text-muted-foreground">View my projects</p>
                   </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-foreground/55 group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground/80 group-hover:translate-x-1 transition-all duration-200" />
               </a>
             </div>
 

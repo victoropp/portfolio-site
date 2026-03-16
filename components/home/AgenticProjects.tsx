@@ -54,7 +54,7 @@ const agenticProjects: {
 
 export function AgenticProjects() {
   return (
-    <section className="py-20 md:py-32 border-t border-white/5">
+    <section className="py-20 md:py-32 border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-16">
 
@@ -78,13 +78,13 @@ export function AgenticProjects() {
           </div>
 
           {/* Right: Project list */}
-          <div className="lg:col-span-3 divide-y divide-white/5">
+          <div className="lg:col-span-3 divide-y divide-white/10">
             {agenticProjects.map((project, index) => (
               <ScrollReveal key={project.title} delay={index * 0.08}>
                 <div className="py-10 group">
                   {/* Tag + icon row */}
                   <div className="flex items-center gap-3 mb-4">
-                    <project.Icon className="h-4 w-4 text-foreground/45" />
+                    <project.Icon className="h-4 w-4 text-muted-foreground" />
                     <span className="section-index">{project.tag}</span>
                   </div>
 
@@ -102,7 +102,7 @@ export function AgenticProjects() {
                   </p>
 
                   {/* Tech — plain dot-separated text */}
-                  <p className="text-xs text-foreground/45 tracking-wide">
+                  <p className="text-xs text-muted-foreground tracking-wide">
                     {project.techStack.join("  ·  ")}
                   </p>
                 </div>

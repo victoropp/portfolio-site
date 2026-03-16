@@ -127,7 +127,7 @@ export function Hero() {
           </div>
 
           {/* Right: Stats strip — 2 of 5 columns, hidden on mobile */}
-          <div className="hidden lg:flex lg:col-span-2 flex-col border-l border-white/5 pl-12">
+          <div className="hidden lg:flex lg:col-span-2 flex-col border-l border-white/10 pl-12">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -135,7 +135,7 @@ export function Hero() {
                 variants={statVariants}
                 initial={hydrated ? "hidden" : false}
                 animate={hydrated ? "visible" : false}
-                className="py-8 border-b border-white/5 last:border-b-0"
+                className="py-8 border-b border-white/10 last:border-b-0"
               >
                 <div
                   className="text-5xl font-bold tracking-tight text-foreground num-tabular mb-1"

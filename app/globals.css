@@ -4,44 +4,34 @@
 
 @layer base {
   :root {
-    /* Design System Colors - Dark Theme */
-    --background: 222 25% 11%; /* #141824 - Lifted dark navy */
-    --foreground: 210 20% 96%; /* #F2F4F8 - Off-white */
+    --background: 222 25% 11%;
+    --foreground: 0 0% 95%;          /* near-white #F2F2F2 */
 
-    /* Primary - Cyan for data science */
-    --primary: 190 100% 50%; /* #00D9FF - Cyan */
-    --primary-foreground: 210 50% 8%;
+    --primary: 190 100% 50%;
+    --primary-foreground: 222 25% 11%;
 
-    /* Secondary - Purple for AI/ML */
-    --secondary: 251 73% 66%; /* #7B68EE - Purple */
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 251 73% 66%;
+    --secondary-foreground: 0 0% 98%;
 
-    /* Accent - Green for success/metrics */
-    --accent: 158 64% 52%; /* #10B981 - Green */
-    --accent-foreground: 210 50% 8%;
+    --accent: 158 64% 52%;
+    --accent-foreground: 222 25% 11%;
 
-    /* Card backgrounds */
-    --card: 220 20% 16%; /* #1E2230 */
-    --card-foreground: 210 20% 98%;
+    --card: 220 20% 16%;
+    --card-foreground: 0 0% 95%;
 
-    /* Borders */
-    --border: 217 19% 20%;
-    --input: 217 19% 24%;
+    --border: 217 19% 27%;           /* was 20% — more visible borders */
+    --input: 217 19% 27%;
     --ring: 190 100% 50%;
 
-    /* Muted colors */
-    --muted: 215 20% 55%; /* lifted */
-    --muted-foreground: 215 16% 75%; /* was 65% — boosted for readability */
+    --muted: 215 15% 50%;
+    --muted-foreground: 215 15% 78%; /* was 75%, now 78% — clearly readable */
 
-    /* Destructive */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    /* Popover */
-    --popover: 220 39% 16%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 220 20% 16%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Radius — sharp editorial feel */
     --radius: 0.25rem;
   }
 
@@ -55,7 +45,7 @@
   /* Glassmorphism Effect — flattened, no blur */
   .glass {
     background: rgba(15, 18, 40, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glass-hover {
@@ -73,7 +63,7 @@
   .rule-editorial {
     width: 3rem;
     height: 1px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
     display: block;
   }
 
@@ -81,7 +71,7 @@
   .rule-full {
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.1);
     display: block;
   }
 
@@ -91,7 +81,7 @@
     font-size: 0.6875rem;
     font-weight: 500;
     letter-spacing: 0.15em;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
   }
 
