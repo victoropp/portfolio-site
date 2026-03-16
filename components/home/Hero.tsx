@@ -94,8 +94,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8"
         >
-          Data Scientist & ML Engineer turning ideas into production apps — from agentic ERPs and AI tutors to multi-agent workflows. Finance background (FCCA, MSc with Distinction).{" "}
-          <span className="text-primary font-semibold">Daily agentic AI builder.</span>
+          Data Scientist & ML Engineer turning ideas into production apps — from agentic ERPs and AI tutors to multi-agent workflows. Finance background (FCCA, MSc with Distinction).
         </motion.p>
 
         {/* Metrics Bar */}
